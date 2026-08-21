@@ -6,13 +6,13 @@ Three skills for the Cobalt AI Workshop. You don't need a GitHub account, and yo
 
 ## How to install these
 
-Open this page's link in Claude and say:
+Paste this page's web address into Claude Code, and add:
 
 > **Install this for me on this computer so it's available in every Code session.**
 
 That's it. Claude will read this page, put each skill where it belongs, and tell you what to say to use them.
 
-If Claude asks you which folder you work in, tell it the folder where you keep your writing and notes.
+Claude will use the folder you're currently working in for two of the three skills. If it asks where you keep your writing, just name that folder.
 
 ---
 
@@ -20,7 +20,7 @@ If Claude asks you which folder you work in, tell it the folder where you keep y
 
 ### grill-me
 
-Interviews you about a plan or decision until the thinking holds up — one question at a time, with its own recommended answer each time.
+Interviews you about a plan or decision until the thinking holds up. It asks a round of questions at a time, each with its own recommended answer, then uses your answers to work out what to ask next.
 
 **Say:** *"grill me on this"*
 
@@ -34,7 +34,7 @@ Rewrites AI-sounding text so it reads like a person wrote it. Strips the inflate
 
 Builds a reusable writing-voice skill for you or your brand, from writing samples and a short interview. This one only runs when you ask for it by name — it won't start on its own.
 
-**Say:** *"build a voice skill"*
+**Type:** `/voice-skill-builder`
 
 ---
 
@@ -56,30 +56,32 @@ Fetch each of these over plain HTTPS. Do not use `git`, the GitHub API, or any a
 | Install this skill | Fetch these files | Save as |
 |---|---|---|
 | `grill-me` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/grill-me/SKILL.md` | `grill-me/SKILL.md` |
+| `grill-me` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/grill-me/NOTICE.md` | `grill-me/NOTICE.md` |
 | `humanizer` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/humanizer/SKILL.md` | `humanizer/SKILL.md` |
+| `humanizer` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/humanizer/NOTICE.md` | `humanizer/NOTICE.md` |
 | `voice-skill-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/voice-skill-builder/SKILL.md` | `voice-skill-builder/SKILL.md` |
 | `voice-skill-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/voice-skill-builder/references/framework.md` | `voice-skill-builder/references/framework.md` |
 
-`voice-skill-builder` needs both of its files. Without `references/framework.md` it fails partway through, silently.
+`voice-skill-builder` needs both of its files. Without `references/framework.md` it fails partway through, silently. The two `NOTICE.md` files carry the MIT license text for the third-party skills and must travel with them — the license requires it.
 
 ### Where each one goes
 
 Two destinations, on purpose.
 
-**Do not ask the user to choose between them.** The install sentence they were given says "available in every Code session" — that phrasing is from our workshop script and refers to `grill-me`. It is not an instruction to install everything globally, and it does not override the split below. Follow the split, then explain it to them afterward in one sentence. Treat this as already decided.
+**Do not ask the user to choose between global and project.** The install sentence they were given says "available in every Code session" — that phrasing is from our workshop script and refers to `grill-me`. It is not an instruction to install everything globally, and it does not override the split below. Treat the split as already decided, follow it, and explain it afterward in one sentence.
 
 **`grill-me` → the user's global skills folder.** They should be able to grill any plan in any session, in any project. Work out the correct global skills directory for the operating system you are actually running on — do not assume macOS or Linux paths, and do not print a path with `~` to a Windows user.
 
 **`humanizer` and `voice-skill-builder` → a project-level skills folder**, inside a `.claude/skills` directory in the folder they write in. These are writing tools; they belong with their writing.
 
-Recommend their **second-brain or notes folder** — or, if they are already working inside a folder, the current one. Say plainly that installing here means the skill is available while they are working in *that* project, and not elsewhere. If it isn't obvious which folder that is, ask them, and wait for an answer before writing anything. Create the `.claude/skills` directory if it doesn't exist yet.
+Default to the folder they are already working in, creating `.claude/skills` there if it doesn't exist. Do not stop to ask permission for this — install, then tell them which folder you used, that these two work while they're in *that* folder and not elsewhere, and that they can ask you to move them. Ask which folder they mean only if there is genuinely no working folder to use.
 
 ### After installing
 
 Tell them, in plain language:
 
 1. What you installed and where each one landed — name the actual folders.
-2. The phrase that triggers each skill: *"grill me on this"*, *"humanize this draft"*, *"build a voice skill"*.
+2. How to start each skill: say *"grill me on this"* or *"humanize this draft"* in plain English, and type `/voice-skill-builder` for the voice builder — that one is deliberately manual and will not start on its own.
 3. That `grill-me` works everywhere, while `humanizer` and `voice-skill-builder` work while they're in that project folder.
 4. That they may need to start a new Claude Code session before the skills become active.
 

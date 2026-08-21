@@ -202,9 +202,9 @@ Examples: a long rolling sentence in otherwise punchy prose, a moment of raw emo
 
 #### Brand Non-Negotiables (required when subject is a brand)
 
-Brand voice skills face higher operational stakes than individual ones — they get handed off to clients who run them across teams and channels without an Augment-side oversight loop. To stay consistent in that context, brand SKILL.md must include four additions beyond the individual blueprint. (These are also the spec enforced by `brand-design-system-builder`'s `brand-contract.md` validator when the brand ships through that orchestrator.)
+Brand voice skills face higher operational stakes than individual ones — they get handed off to clients who run them across teams and channels without an Augment-side oversight loop. To stay consistent in that context, brand SKILL.md must include four additions beyond the individual blueprint.
 
-1. **`## Non-negotiables` section** — explicit, parseable rules on their own bullets: forbidden vocab (`**Never:** ...`), preferred vocab (`**Use:** ...`), required phrases (signature affirmation/tagline with exact format), Oxford comma policy, punctuation budget (em-dash cap, exclamation cap, semicolons), pacing thresholds if relevant. Spec: `brand-design-system-builder/references/brand-contract.md` documents the exact parser syntax.
+1. **`## Non-negotiables` section** — explicit, parseable rules on their own bullets: forbidden vocab (`**Never:** ...`), preferred vocab (`**Use:** ...`), required phrases (signature affirmation/tagline with exact format), Oxford comma policy, punctuation budget (em-dash cap, exclamation cap, semicolons), pacing thresholds if relevant.
 
 2. **Write to a pattern, not a count** (in Generation Protocol). Models can't reliably self-count after drafting — testing showed a model claim its longest sentence was 37 words when the actual was 19. Give the wrapped skill's generator a structural pattern, not a number to check after.
    - **For pacing rules** (e.g., "20+ words for the long sentence"): bake in a **3-act rhythm** — short punch → long expansion → short close. Instruct: "Write the expansion sentence FIRST, then frame it with short punches." Include one worked example in the SKILL.md showing what the expansion looks like for this brand's voice. The model needs a pattern to copy, not a number to hit.

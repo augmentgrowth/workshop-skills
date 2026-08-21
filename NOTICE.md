@@ -46,7 +46,7 @@ The `humanizer` skill in this repo is adapted from **Siqi Chen's** work, not wri
 - License: MIT
 - Retrieved: 2026-08-21
 
-The copy shipped here is an unmodified copy of upstream at commit `e2e92e7b4b8229253ed5c8e81dc65463fdeddda5` (version 2.11.2). The underlying pattern catalogue derives from [Wikipedia's "Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by WikiProject AI Cleanup and licensed CC BY-SA.
+The skill body shipped here is upstream's at commit `e2e92e7b4b8229253ed5c8e81dc65463fdeddda5` (version 2.11.2), unchanged apart from an added provenance block in the frontmatter. The underlying pattern catalogue derives from [Wikipedia's "Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by WikiProject AI Cleanup and licensed CC BY-SA.
 
 Upstream MIT license text, reproduced in full:
 
@@ -78,4 +78,4 @@ SOFTWARE.
 
 Written by Malachi Rose / Augment Growth. Covered by the repository `LICENSE`.
 
-One change from the original: the upstream copy wrote its output to hosted-sandbox paths (`/home/claude/`, `/mnt/user-data/outputs/`), which do not exist on a personal Mac or Windows machine. This copy writes relative to the user's working directory and detects the sandbox case instead of assuming it.
+Changed from the original: the earlier internal version wrote its output to hosted-sandbox paths (`/home/claude/`, `/mnt/user-data/outputs/`), which do not exist on a personal Mac or Windows machine. This copy writes relative to the user's working directory and detects the sandbox case instead of assuming it, and derives a Windows-safe slug for the generated skill folder.

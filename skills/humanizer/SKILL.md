@@ -8,17 +8,17 @@ description: |
 license: MIT
 metadata:
   version: "2.11.2"
-origin:
-  adapted_from: "Siqi Chen — humanizer"
-  repository: https://github.com/blader/humanizer
-  commit: e2e92e7b4b8229253ed5c8e81dc65463fdeddda5
-  retrieved: 2026-08-21
-  license: MIT
-  note: >-
-    Unmodified copy of upstream at the pinned commit. The pattern catalogue
-    derives from Wikipedia's "Signs of AI writing" (WikiProject AI Cleanup,
-    CC BY-SA). Not original work by Augment Growth. Upstream license text:
-    see NOTICE.md at the repository root.
+  origin:
+    adapted_from: "Siqi Chen - humanizer"
+    repository: "https://github.com/blader/humanizer"
+    commit: "e2e92e7b4b8229253ed5c8e81dc65463fdeddda5"
+    retrieved: "2026-08-21"
+    license: MIT
+    note: >-
+      Upstream body at the pinned commit, unchanged; only this provenance block
+      was added. The pattern catalogue derives from Wikipedia's "Signs of AI
+      writing" (WikiProject AI Cleanup, CC BY-SA). Not original work by Augment
+      Growth. Upstream license text: see NOTICE.md beside this file.
 ---
 
 # Humanizer: remove AI writing patterns

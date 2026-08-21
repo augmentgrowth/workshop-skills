@@ -1,18 +1,21 @@
 ---
 name: grill-me
 description: Grill the user relentlessly about a plan, decision, or idea. Use when the user says "grill me", "grill me on this", or otherwise wants to stress-test their thinking, or uses any 'grill' trigger phrases.
-origin:
-  adapted_from: "Matt Pocock — grill-me + grilling"
-  repository: https://github.com/mattpocock/skills
-  commit: 5b15a47f2d7150f545fbcacbfe381787fc0230dc
-  retrieved: 2026-08-21
-  license: MIT
-  note: >-
-    Upstream ships two skills: grill-me (a one-line shim) and grilling (the
-    interview engine). This is a single merged skill — grilling's engine body
-    published under the grill-me name so one phrase means one install. Body
-    text is upstream's, unmodified. Not original work by Augment Growth.
-    Upstream license text: see NOTICE.md at the repository root.
+license: MIT
+metadata:
+  origin:
+    adapted_from: "Matt Pocock - grill-me + grilling"
+    repository: "https://github.com/mattpocock/skills"
+    commit: "5b15a47f2d7150f545fbcacbfe381787fc0230dc"
+    retrieved: "2026-08-21"
+    license: MIT
+    note: >-
+      Upstream ships two skills: grill-me (a one-line shim) and grilling (the
+      interview engine). This is a single merged skill - grilling's engine body
+      published under the grill-me name so one phrase means one install. Body
+      text is upstream's, unmodified; only this frontmatter was rewritten. Not
+      original work by Augment Growth. Upstream license text: see NOTICE.md
+      beside this file.
 ---
 
 Interview the user relentlessly until you reach a shared understanding. Map this as a **design tree**: every decision branches into the decisions that hang off it.

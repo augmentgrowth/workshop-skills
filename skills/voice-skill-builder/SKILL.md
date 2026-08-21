@@ -29,7 +29,7 @@ Ask for writing samples. 5-10 pieces across different formats provide the strong
 
 **How to gather samples (offer all that apply):**
 
-- **Reference past chats.** Use `conversation_search` and `recent_chats` to pull the subject's words from previous conversations. Search for writing-related topics (posts they drafted, content they discussed, explanations they gave). This is often the fastest and most natural source of voice data since the user doesn't have to prepare anything.
+- **Reference past chats.** If tools for searching past conversations are available in this environment (they exist on Claude.ai, not in a standard Claude Code install), use them to pull the subject's words from previous conversations. If they are not available, skip this source and ask for writing samples instead. Search for writing-related topics (posts they drafted, content they discussed, explanations they gave). This is often the fastest and most natural source of voice data since the user doesn't have to prepare anything.
 - **Paste in chat.** The user can paste writing samples directly into the conversation.
 - **Upload files.** The user can attach documents, screenshots, or text files.
 - **Fetch URLs.** If the user provides a URL (blog, website, LinkedIn profile, newsletter archive, X profile), fetch that page and use it as a starting sample. Then look for related content to broaden the sample set:
@@ -84,7 +84,7 @@ Example: "Here's what I'm seeing from the samples: [Name] writes like [identity]
 
 **The user corrects, confirms, or adds.** This is the interview. Most of the time, the analysis will be close enough that the user only needs to nudge a few things. That's the goal. A quick "yeah, but we're more X than Y" is more useful than the user picking from a list of options they all agree with.
 
-**Only ask structured questions when you're genuinely stuck.** Use `ask_user_input` sparingly. Reserve it for moments where the samples are ambiguous or contradictory and you need the user to break a tie. Examples of when a question earns its place:
+**Only ask structured questions when you're genuinely stuck.** Ask sparingly, using whatever question mechanism this environment provides (a structured question tool if one exists, otherwise plain chat). Reserve it for moments where the samples are ambiguous or contradictory and you need the user to break a tie. Examples of when a question earns its place:
 
 - Samples show both formal and casual registers with no clear pattern → ask which is the default vs. the exception
 - Humor appears in some samples but not others → ask whether that's intentional range or inconsistency
@@ -115,7 +115,9 @@ The skill directory structure:
 └── references/examples.md
 ```
 
-Use the subject's name (person or brand) for `[name]`. Create the directory and all three files as `[name]-voice/` inside the folder the user is currently working in. Do not write to an absolute path outside that folder.
+Derive `[name]` as a slug from the subject's name: lowercase ASCII letters, digits and hyphens only, no spaces, accents, apostrophes or punctuation, 64 characters at most ("Jane Doe" becomes `jane-doe`, "O'Brien & Co." becomes `obrien-co`). Use that slug for the folder and for the generated skill's `name:` frontmatter — spaces and punctuation are illegal in skill names and break on Windows. Keep the real display name for prose inside the skill.
+
+Create the directory and all three files as `[name]-voice/` inside the folder the user is currently working in. Do not write to an absolute path outside that folder.
 
 Present a brief summary of what was generated: the core attributes, the dead patterns, and the grammar rules. Don't present the files yet. The user needs to see the skill in action before it ships.
 

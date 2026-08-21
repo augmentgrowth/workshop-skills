@@ -77,3 +77,5 @@ SOFTWARE.
 ## voice-skill-builder
 
 Written by Malachi Rose / Augment Growth. Covered by the repository `LICENSE`.
+
+One change from the original: the upstream copy wrote its output to hosted-sandbox paths (`/home/claude/`, `/mnt/user-data/outputs/`), which do not exist on a personal Mac or Windows machine. This copy writes relative to the user's working directory and detects the sandbox case instead of assuming it.

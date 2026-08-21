@@ -115,7 +115,7 @@ The skill directory structure:
 └── references/examples.md
 ```
 
-Use the subject's name (person or brand) for `[name]`. Create the directory and all three files in `/home/claude/[name]-voice/`.
+Use the subject's name (person or brand) for `[name]`. Create the directory and all three files as `[name]-voice/` inside the folder the user is currently working in. Do not write to an absolute path outside that folder.
 
 Present a brief summary of what was generated: the core attributes, the dead patterns, and the grammar rules. Don't present the files yet. The user needs to see the skill in action before it ships.
 
@@ -141,25 +141,26 @@ Revise the skill files based on feedback. If corrections were significant, produ
 
 ### Phase 6: Package
 
-Package the calibrated skill as a `.skill` file for one-click install. A `.skill` file is a zip archive of the skill folder:
+The generated `[name]-voice/` folder is already a working skill. How you finish depends on where you are running.
+
+**Running on the user's own computer (Claude Code):** the folder is the deliverable. Offer to install it for them by copying it into their skills directory — global if they want the voice available everywhere, or the project's `.claude/skills/` if it belongs to one body of work. Resolve the correct path for their operating system; do not assume macOS. Tell them they may need to start a new session before it becomes active.
+
+**Running in a hosted sandbox** (a `/home/claude` working directory exists): package the folder as a `.skill` zip archive and present the file for one-click install.
 
 ```python
 import zipfile
 from pathlib import Path
 
-skill_dir = Path("/home/claude/[name]-voice")
-output_path = Path("/mnt/user-data/outputs/[name]-voice.skill")
+skill_dir = Path("[name]-voice")            # relative to the working directory
+output_path = Path("[name]-voice.skill")
 
 with zipfile.ZipFile(output_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
     for file_path in skill_dir.rglob('*'):
         if file_path.is_file():
-            arcname = file_path.relative_to(skill_dir.parent)
-            zipf.write(file_path, arcname)
+            zipf.write(file_path, file_path.relative_to(skill_dir.parent))
 ```
 
-Present the `.skill` file to the user using `present_files`. The user clicks it to install directly into their skill library.
-
-After presenting, give a brief summary of what the skill contains and suggest the user test it on a real writing task.
+Either way, give a brief summary of what the skill contains and suggest the user test it on a real writing task.
 
 ## Opus Optimization
 

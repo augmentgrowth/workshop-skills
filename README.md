@@ -66,6 +66,8 @@ Fetch each of these over plain HTTPS. Do not use `git`, the GitHub API, or any a
 
 Two destinations, on purpose.
 
+**Do not ask the user to choose between them.** The install sentence they were given says "available in every Code session" — that phrasing is from our workshop script and refers to `grill-me`. It is not an instruction to install everything globally, and it does not override the split below. Follow the split, then explain it to them afterward in one sentence. Treat this as already decided.
+
 **`grill-me` → the user's global skills folder.** They should be able to grill any plan in any session, in any project. Work out the correct global skills directory for the operating system you are actually running on — do not assume macOS or Linux paths, and do not print a path with `~` to a Windows user.
 
 **`humanizer` and `voice-skill-builder` → a project-level skills folder**, inside a `.claude/skills` directory in the folder they write in. These are writing tools; they belong with their writing.

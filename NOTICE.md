@@ -42,10 +42,11 @@ SOFTWARE.
 The `humanizer` skill in this repo is adapted from **Siqi Chen's** work, not written by Augment Growth.
 
 - Source: https://github.com/blader/humanizer
+- Commit: `e2e92e7b4b8229253ed5c8e81dc65463fdeddda5`
 - License: MIT
 - Retrieved: 2026-08-21
 
-The copy shipped here is a fork at version 2.1.1. Its exact upstream base commit is not recorded, and upstream has moved on since (`main` was `e2e92e7b4b8229253ed5c8e81dc65463fdeddda5` on 2026-08-21). The underlying pattern catalogue derives from [Wikipedia's "Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by WikiProject AI Cleanup and licensed CC BY-SA.
+The copy shipped here is an unmodified copy of upstream at commit `e2e92e7b4b8229253ed5c8e81dc65463fdeddda5` (version 2.11.2). The underlying pattern catalogue derives from [Wikipedia's "Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by WikiProject AI Cleanup and licensed CC BY-SA.
 
 Upstream MIT license text, reproduced in full:
 

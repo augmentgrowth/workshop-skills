@@ -74,6 +74,51 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
+## ce-brainstorm, ce-plan, ce-work, ce-handoff
+
+These four skills are adapted from **Every's** compound-engineering plugin, not written by Augment Growth.
+
+- Source: https://github.com/EveryInc/compound-engineering-plugin
+- Version: `3.20.0`
+- Retrieved: 2026-08-21
+- License: MIT
+
+Upstream ships them as part of a ~30-skill plugin whose members call each other freely. This repo extracts four of them to stand alone. Changed from the original:
+
+- **Frontmatter** carries an added `origin` provenance block; skill bodies are otherwise upstream's.
+- **Cross-references to plugin siblings that do not ship here** (`ce-pov`, `ce-doc-review`, `ce-proof`, `ce-code-review`, `ce-simplify-code`, `ce-commit-push-pr`, `ce-worktree`, `ce-debug`, `ce-compound`, `lfg`) were softened to graceful absence rather than deleted: each SKILL.md opens with an availability contract, and the three handoff/shipping references carry a gate that drops menu options routing to absent skills and substitutes an inline fallback. No load-bearing behavior was removed — the *intent* of each step survives, performed inline.
+- **`ce-brainstorm`'s verdict routing** to `ce-pov` is handled inline, and its `references/verdict-routing.md` is not shipped.
+- **Model-elevation dispatch** (`references/reasoning-elevation.md` plus its `elevation-dispatch.sh` / `peer-job-runner.py` scripts) is not shipped in `ce-brainstorm` or `ce-plan`; those steps run on the session model.
+- **`ce-work`'s cross-model execution engine** — `references/execution-engines.md`, `references/cross-model-execution.md`, `references/cross-model-work-eval.md`, and the bundled Python/shell controller under `scripts/` — is not shipped. Execution is always native, and the skill's fail-closed reference-loading rule carries an explicit carve-out so those three absences do not stop a run.
+- **`ce-brainstorm`'s visual-probe display helper** (`scripts/visual-probe-server.js`) is not shipped; the reference's own text fallback is the documented path.
+- **Shell-dependent steps** (scratch directories, `git` probes, clipboard copies, `/tmp` managed storage) were annotated as skippable so the skills degrade rather than stall where no terminal exists.
+
+Upstream MIT license text, reproduced in full:
+
+```
+MIT License
+
+Copyright (c) 2025 Every
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
 ## voice-skill-builder
 
 Written by Malachi Rose / Augment Growth. Covered by the repository `LICENSE`.

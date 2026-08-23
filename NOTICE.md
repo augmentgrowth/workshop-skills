@@ -119,6 +119,60 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
+## skill-creator
+
+The `skill-creator` skill in this repo is **Anthropic's**, not written by Augment Growth.
+
+- Source: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator
+- Marketplace: `claude-plugins-official`, plugin `skill-creator`, snapshot `340e33aef211d95769d252324854497af871dafe`
+- Retrieved: 2026-08-23
+- License: Apache License 2.0
+
+Unlike the extractions above, nothing here was adapted. Every file is upstream's
+byte-for-byte — `SKILL.md`, `agents/`, `references/`, `scripts/`, `assets/`,
+`eval-viewer/` — with no frontmatter provenance block added and no cross-references
+softened, because the skill ships self-contained upstream and calls no plugin
+siblings. This repo redistributes it so workshop attendees can install it without
+adding a plugin marketplace.
+
+Apache 2.0 requires that the license text accompany the work: it ships as
+`skills/skill-creator/LICENSE.txt`, alongside `skills/skill-creator/NOTICE.md`.
+The full text is not duplicated here — see that file, or
+https://www.apache.org/licenses/LICENSE-2.0.
+
+Anthropic's name and marks are used only to identify the origin of this skill, as
+Apache 2.0 section 6 permits. Nothing here implies Anthropic endorses this repo or
+the workshop.
+
+## routines
+
+Written by Malachi Rose / Augment Growth. Covered by the repository `LICENSE`.
+
+Changed from the original: the internal version was wired to one specific Claude
+account and one machine. Sanitized for publication —
+
+- **Account-specific identifiers removed.** The hardcoded `environment_id`, the
+  default GitHub repository, and the Gmail / Google Calendar / Slack
+  `connector_uuid` values were replaced with placeholders plus a discovery step
+  (read them off an existing routine via `RemoteTrigger list`, or from the
+  environment and connector settings pages). No credentials, tokens, or API keys
+  were present in the original.
+- **Personal context generalized.** References to the author by name, to his
+  timezone, to his laptop, and to his Obsidian vault became "the user", "their
+  local timezone" (with a step to determine and confirm it), and generic local-file
+  language. The cron examples keep US Pacific as a worked example, labelled as such,
+  and gained a daylight-saving caveat.
+- **Vault-specific output paths generalized.** The report path and the
+  "add to `active/todo.md`" step were replaced with a repo-relative report folder
+  agreed with the user, and a plain instruction to report outstanding blockers.
+- **Availability contract added**, in the same spirit as the `ce-` extractions
+  above: the skill depends on the `RemoteTrigger` tool rather than on any bundled
+  file, so it now opens by naming that dependency and pointing at the web UI as
+  the fallback path when the tool is unavailable.
+- **Build-system frontmatter removed** (`static`, `tier`, and an `upstream` key
+  holding a local filesystem path), replaced with an `origin` provenance block
+  matching the rest of this repo.
+
 ## voice-skill-builder
 
 Written by Malachi Rose / Augment Growth. Covered by the repository `LICENSE`.

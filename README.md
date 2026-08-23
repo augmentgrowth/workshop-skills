@@ -36,6 +36,18 @@ Builds a reusable writing-voice skill for you or your brand, from writing sample
 
 **Type:** `/voice-skill-builder`
 
+### skill-creator (used in Workshop 2)
+
+Anthropic's own skill for building skills. It interviews you about what you want the skill to do, writes a draft, sets up a few realistic test prompts, runs them, shows you the results side by side, and rewrites the skill from your feedback — as many rounds as you want. Use this one when you want to turn something you do repeatedly into a skill of your own.
+
+**Type:** `/skill-creator`
+
+### routines (used in Workshop 2)
+
+Sets up scheduled agents that run in Anthropic's cloud instead of on your machine — a daily digest, a weekly scan, a webhook that fires Claude when something happens elsewhere. It handles the schedule, the prompt, the tools, and where the output lands, and tells you what it created. Because the run happens in the cloud, it can't see anything on your computer — only what's in the repository you point it at.
+
+**Say:** *"set up a routine that runs every morning"* — or type `/routines`
+
 ---
 
 ### The project skills: ce-brainstorm, ce-plan, ce-work, ce-handoff
@@ -78,7 +90,7 @@ There's also a small practice pack here — a fictional meeting transcript and i
 
 ## Credits
 
-`grill-me` is adapted from [Matt Pocock's skills](https://github.com/mattpocock/skills) (MIT). `humanizer` is adapted from [Siqi Chen's humanizer](https://github.com/blader/humanizer) (MIT), which builds on Wikipedia's "Signs of AI writing." `ce-brainstorm`, `ce-plan`, `ce-work`, and `ce-handoff` are adapted from [Every's compound-engineering plugin](https://github.com/EveryInc/compound-engineering-plugin) (MIT), version 3.20.0, and trimmed to stand alone outside that plugin. Full attribution and license texts are in [NOTICE.md](NOTICE.md).
+`grill-me` is adapted from [Matt Pocock's skills](https://github.com/mattpocock/skills) (MIT). `humanizer` is adapted from [Siqi Chen's humanizer](https://github.com/blader/humanizer) (MIT), which builds on Wikipedia's "Signs of AI writing." `ce-brainstorm`, `ce-plan`, `ce-work`, and `ce-handoff` are adapted from [Every's compound-engineering plugin](https://github.com/EveryInc/compound-engineering-plugin) (MIT), version 3.20.0, and trimmed to stand alone outside that plugin. `skill-creator` is Anthropic's, redistributed unchanged from the [official Claude Code plugin marketplace](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator) (Apache 2.0). `routines` is Augment Growth's own. Full attribution and license texts are in [NOTICE.md](NOTICE.md).
 
 ---
 ---
@@ -99,6 +111,26 @@ Fetch each of these over plain HTTPS. Do not use `git`, the GitHub API, or any a
 | `humanizer` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/humanizer/NOTICE.md` | `humanizer/NOTICE.md` |
 | `voice-skill-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/voice-skill-builder/SKILL.md` | `voice-skill-builder/SKILL.md` |
 | `voice-skill-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/voice-skill-builder/references/framework.md` | `voice-skill-builder/references/framework.md` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/LICENSE.txt` | `skill-creator/LICENSE.txt` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/NOTICE.md` | `skill-creator/NOTICE.md` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/SKILL.md` | `skill-creator/SKILL.md` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/agents/analyzer.md` | `skill-creator/agents/analyzer.md` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/agents/comparator.md` | `skill-creator/agents/comparator.md` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/agents/grader.md` | `skill-creator/agents/grader.md` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/assets/eval_review.html` | `skill-creator/assets/eval_review.html` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/eval-viewer/generate_review.py` | `skill-creator/eval-viewer/generate_review.py` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/eval-viewer/viewer.html` | `skill-creator/eval-viewer/viewer.html` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/references/schemas.md` | `skill-creator/references/schemas.md` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/scripts/__init__.py` | `skill-creator/scripts/__init__.py` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/scripts/aggregate_benchmark.py` | `skill-creator/scripts/aggregate_benchmark.py` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/scripts/generate_report.py` | `skill-creator/scripts/generate_report.py` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/scripts/improve_description.py` | `skill-creator/scripts/improve_description.py` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/scripts/package_skill.py` | `skill-creator/scripts/package_skill.py` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/scripts/quick_validate.py` | `skill-creator/scripts/quick_validate.py` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/scripts/run_eval.py` | `skill-creator/scripts/run_eval.py` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/scripts/run_loop.py` | `skill-creator/scripts/run_loop.py` |
+| `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/scripts/utils.py` | `skill-creator/scripts/utils.py` |
+| `routines` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/routines/SKILL.md` | `routines/SKILL.md` |
 | `ce-brainstorm` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/ce-brainstorm/SKILL.md` | `ce-brainstorm/SKILL.md` |
 | `ce-brainstorm` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/ce-brainstorm/references/agents/slack-researcher.md` | `ce-brainstorm/references/agents/slack-researcher.md` |
 | `ce-brainstorm` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/ce-brainstorm/references/blindspot-pass.md` | `ce-brainstorm/references/blindspot-pass.md` |
@@ -149,7 +181,11 @@ Fetch each of these over plain HTTPS. Do not use `git`, the GitHub API, or any a
 | `ce-work` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/ce-work/references/tracker-defer.md` | `ce-work/references/tracker-defer.md` |
 | `ce-handoff` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/ce-handoff/SKILL.md` | `ce-handoff/SKILL.md` |
 
-`voice-skill-builder` needs both of its files. Without `references/framework.md` it fails partway through, silently. The same applies, much more so, to the four `ce-` skills: they load their `references/` files on demand mid-run, and a missing one stops the skill at that point with no warning at install time. Fetch every row listed for a skill, or don't install that skill. Preserve the `references/` and `references/agents/` subfolder structure exactly — the skills resolve those paths relative to their own `SKILL.md`. The two `NOTICE.md` files carry the MIT license text for the third-party skills and must travel with them — the license requires it.
+`voice-skill-builder` needs both of its files. Without `references/framework.md` it fails partway through, silently. The same applies, much more so, to the four `ce-` skills: they load their `references/` files on demand mid-run, and a missing one stops the skill at that point with no warning at install time. The same applies to `skill-creator`, which loads its `agents/`, `references/`, and `assets/` files mid-run and shells out to the Python under `scripts/` and `eval-viewer/`. Its `scripts/__init__.py` looks empty and is not — the `python -m scripts.<name>` calls in the skill fail without it. `routines` is a single file with nothing to miss.
+
+Two things about `skill-creator` you'll hit later rather than at install time, so don't pre-emptively make the user install anything now — just recognize them if they come up. Its optional description-optimizer step imports `yaml` (PyYAML), which isn't in the Python standard library; and a couple of its steps use macOS/Linux conventions (`open <file>`, `/tmp`) that need the local equivalent on Windows. Neither blocks the main create-test-review-improve loop. This is Anthropic's skill shipped unmodified, so work around these in the moment rather than editing the installed files.
+
+Fetch every row listed for a skill, or don't install that skill. Preserve the `references/`, `references/agents/`, `agents/`, `assets/`, `scripts/`, and `eval-viewer/` subfolder structure exactly — the skills resolve those paths relative to their own `SKILL.md`. The three `NOTICE.md` files carry the license text for the third-party skills and must travel with them — the licenses require it, and `skill-creator/LICENSE.txt` must travel with `skill-creator` for the same reason.
 
 ### Where each one goes
 
@@ -159,7 +195,7 @@ Two destinations, on purpose.
 
 **`grill-me` → the user's global skills folder.** They should be able to grill any plan in any session, in any project. Work out the correct global skills directory for the operating system you are actually running on — do not assume macOS or Linux paths, and do not print a path with `~` to a Windows user.
 
-**`humanizer`, `voice-skill-builder`, and the four `ce-` skills → a project-level skills folder**, inside a `.claude/skills` directory in the folder they write in. These are writing and project tools; they belong with the work they act on. The four `ce-` skills write plan documents into a `docs/plans` folder in whatever project they're used in, so installing them project-level keeps each project's plans with that project.
+**`humanizer`, `voice-skill-builder`, `skill-creator`, `routines`, and the four `ce-` skills → a project-level skills folder**, inside a `.claude/skills` directory in the folder they write in. These are writing and project tools; they belong with the work they act on. The four `ce-` skills write plan documents into a `docs/plans` folder in whatever project they're used in, so installing them project-level keeps each project's plans with that project. `skill-creator` writes new skills and a workspace folder into the project it's run from, for the same reason.
 
 Default to the folder they are already working in, creating `.claude/skills` there if it doesn't exist. Do not stop to ask permission for this — install, then tell them which folder you used, that these work while they're in *that* folder and not elsewhere, and that they can ask you to move them. Ask which folder they mean only if there is genuinely no working folder to use.
 
@@ -181,9 +217,10 @@ If the user asks you to **set up a project from this repo's meeting pack** (the 
 Tell them, in plain language:
 
 1. What you installed and where each one landed — name the actual folders.
-2. How to start each skill: say *"grill me on this"* or *"humanize this draft"* in plain English; type `/voice-skill-builder` for the voice builder — that one is deliberately manual and will not start on its own; and type `/ce-brainstorm`, `/ce-plan`, `/ce-work`, or `/ce-handoff` for the project skills, which can also start on their own when the request obviously matches one.
+2. How to start each skill: say *"grill me on this"* or *"humanize this draft"* in plain English; type `/voice-skill-builder` for the voice builder — that one is deliberately manual and will not start on its own; type `/skill-creator` to build a skill and `/routines` to set up a scheduled cloud agent (or just ask for either in plain English); and type `/ce-brainstorm`, `/ce-plan`, `/ce-work`, or `/ce-handoff` for the project skills, which can also start on their own when the request obviously matches one.
 3. That `grill-me` works everywhere, while everything else works while they're in that project folder.
 3b. That the four `ce-` skills are built for software projects: `ce-brainstorm` and `ce-plan` are useful for any multi-step work, but `ce-work` expects a code project it can run tests in and save changes to. Say this plainly rather than letting them discover it mid-run.
+3c. That `skill-creator` and `routines` are for Workshop 2 — they're installed and ready, and there's nothing to do with them yet. Mention two practical things rather than letting them hit these mid-session: `skill-creator` runs Python scripts and opens a results page in the browser, and `routines` creates agents that run in Anthropic's cloud, so a routine needs a GitHub repository to write into and cannot see anything on their own computer.
 4. That they may need to start a new Claude Code session before the skills become active.
 
 Do not ask them to run any terminal or shell commands. Do not ask them to install `git`. If something fails, say what failed and what you'd try next — don't hand them a command to run.

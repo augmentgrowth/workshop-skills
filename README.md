@@ -1,6 +1,6 @@
 # Workshop Skills
 
-Seven skills for the Cobalt AI Workshop. You don't need a GitHub account, and you don't need to know anything about this page — Claude does the work.
+Skills for the Cobalt AI Workshop. You don't need a GitHub account, and you don't need to know anything about this page — Claude does the work.
 
 ---
 
@@ -38,7 +38,7 @@ Builds a reusable writing-voice skill for you or your brand, from writing sample
 
 ---
 
-### The four project skills: ce-brainstorm, ce-plan, ce-work, ce-handoff
+### The project skills: ce-brainstorm, ce-plan, ce-work, ce-handoff
 
 These four came from Every's compound-engineering plugin and are meant to be used in order, on a piece of real work. Each one hands off to the next, so you can stop after any of them. They're built for people building software, and they'll want a project folder to write into — but the first two are useful for planning any multi-step piece of work, not only code.
 
@@ -181,7 +181,7 @@ If the user asks you to **set up a project from this repo's meeting pack** (the 
 Tell them, in plain language:
 
 1. What you installed and where each one landed — name the actual folders.
-2. How to start each skill: say *"grill me on this"* or *"humanize this draft"* in plain English; type `/voice-skill-builder` for the voice builder — that one is deliberately manual and will not start on its own; and type `/ce-brainstorm`, `/ce-plan`, `/ce-work`, or `/ce-handoff` for the four project skills, which can also start on their own when the request obviously matches one.
+2. How to start each skill: say *"grill me on this"* or *"humanize this draft"* in plain English; type `/voice-skill-builder` for the voice builder — that one is deliberately manual and will not start on its own; and type `/ce-brainstorm`, `/ce-plan`, `/ce-work`, or `/ce-handoff` for the project skills, which can also start on their own when the request obviously matches one.
 3. That `grill-me` works everywhere, while everything else works while they're in that project folder.
 3b. That the four `ce-` skills are built for software projects: `ce-brainstorm` and `ce-plan` are useful for any multi-step work, but `ce-work` expects a code project it can run tests in and save changes to. Say this plainly rather than letting them discover it mid-run.
 4. That they may need to start a new Claude Code session before the skills become active.

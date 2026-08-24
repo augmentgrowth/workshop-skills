@@ -44,9 +44,11 @@ Anthropic's own skill for building skills. It interviews you about what you want
 
 ### routines (used in Workshop 2)
 
-Sets up scheduled agents that run in Anthropic's cloud instead of on your machine — a daily digest, a weekly scan, a webhook that fires Claude when something happens elsewhere. It handles the schedule, the prompt, the tools, and where the output lands, and tells you what it created. Because the run happens in the cloud, it can't see anything on your computer — only what's in the repository you point it at.
+Sets up scheduled agents that run in Anthropic's cloud instead of on your machine — a daily digest, a weekly scan, a webhook that fires Claude when something happens elsewhere. It handles the schedule, the prompt, the tools, and where the output lands, and tells you what it created. Because the run happens in the cloud, it can't see anything on your computer — only what's in the repository you point it at. If a task does need your local files, the same Routines page creates a local scheduled task instead, which runs on your machine.
 
 **Say:** *"set up a routine that runs every morning"* — or type `/routines`
+
+Note: Claude Code's built-in `/schedule` command is also aliased `/routines` — typing `/routines` may invoke either; both lead to the same place.
 
 ---
 
@@ -220,7 +222,7 @@ Tell them, in plain language:
 2. How to start each skill: say *"grill me on this"* or *"humanize this draft"* in plain English; type `/voice-skill-builder` for the voice builder — that one is deliberately manual and will not start on its own; type `/skill-creator` to build a skill and `/routines` to set up a scheduled cloud agent (or just ask for either in plain English); and type `/ce-brainstorm`, `/ce-plan`, `/ce-work`, or `/ce-handoff` for the project skills, which can also start on their own when the request obviously matches one.
 3. That `grill-me` works everywhere, while everything else works while they're in that project folder.
 3b. That the four `ce-` skills are built for software projects: `ce-brainstorm` and `ce-plan` are useful for any multi-step work, but `ce-work` expects a code project it can run tests in and save changes to. Say this plainly rather than letting them discover it mid-run.
-3c. That `skill-creator` and `routines` are for Workshop 2 — they're installed and ready, and there's nothing to do with them yet. Mention two practical things rather than letting them hit these mid-session: `skill-creator` runs Python scripts and opens a results page in the browser, and `routines` creates agents that run in Anthropic's cloud, so a routine needs a GitHub repository to write into and cannot see anything on their own computer.
+3c. That `skill-creator` and `routines` are for Workshop 2 — they're installed and ready, and there's nothing to do with them yet. Mention two practical things rather than letting them hit these mid-session: `skill-creator` runs Python scripts and opens a results page in the browser, and `routines` creates agents that run in Anthropic's cloud, so a routine needs a GitHub repository to write into and cannot see anything on their own computer — the local alternative, for tasks that do need their own files, is a Desktop scheduled task.
 4. That they may need to start a new Claude Code session before the skills become active.
 
 Do not ask them to run any terminal or shell commands. Do not ask them to install `git`. If something fails, say what failed and what you'd try next — don't hand them a command to run.

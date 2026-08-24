@@ -1,6 +1,6 @@
 ---
 name: routines
-description: Create, fire, and manage Claude Code cloud routines (scheduled/API/GitHub-triggered remote agents). Use when asked to set up a recurring remote agent, a webhook-triggered workflow, automate a daily/weekly task in the cloud, schedule a cron job for Claude Code, or anything involving claude.ai/code/scheduled. Triggers on "routine", "schedule a remote agent", "webhook to Claude", "daily/weekly Claude job", "cron routine", or /routines.
+description: Create, fire, and manage Claude Code cloud routines (scheduled/API/GitHub-triggered remote agents). Use when asked to set up a recurring remote agent, a webhook-triggered workflow, automate a daily/weekly task in the cloud, schedule a cron job for Claude Code, or anything involving claude.ai/code/routines. Triggers on "routine", "schedule a remote agent", "webhook to Claude", "daily/weekly Claude job", "cron routine", or /routines.
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash, ToolSearch, WebFetch, RemoteTrigger
 license: MIT
 metadata:
@@ -15,30 +15,33 @@ metadata:
 
 # Routines — Cloud Scheduled Agents
 
-Routines are **saved Claude Code configurations that run on Anthropic-managed cloud infrastructure** — a prompt + repo(s) + connectors, fired on a schedule, HTTP POST, or GitHub event. They keep working when your laptop is closed.
+Routines are **saved Claude Code configurations that run on Anthropic-managed cloud infrastructure** — or your organization's self-hosted environment when routed there — a prompt + repo(s) + connectors, fired on a schedule, HTTP POST, or GitHub event. They keep working when your laptop is closed.
 
 Docs: https://code.claude.com/docs/en/routines
 Fire API: https://platform.claude.com/docs/en/api/claude-code/routines-fire
-Web UI: https://claude.ai/code/scheduled
+Web UI: https://claude.ai/code/routines
 
-**What this skill needs.** Creating and managing routines runs through the `RemoteTrigger` tool. If it isn't available in this session (load it with `ToolSearch` first — it is often deferred), say so plainly rather than improvising: routines can still be created by hand at https://claude.ai/code/scheduled, and everything below about schedules, prompts, tools, and output conventions applies just the same in the web UI. Nothing else in this skill depends on files outside it.
+**What this skill needs.** Cloud routines can be created three ways: conversationally with the built-in `/schedule` command (also aliased `/routines`), from the web at claude.ai/code/routines, or programmatically with the `RemoteTrigger` tool — which is what this skill uses, because it gives exact control over the body shape. If `RemoteTrigger` isn't available (load it with `ToolSearch` first — it is often deferred), fall back to `/schedule` or the web UI; everything below about schedules, prompts, tools, and output conventions applies just the same.
+
+`/schedule` requires a claude.ai subscription login; an `ANTHROPIC_API_KEY`/`ANTHROPIC_AUTH_TOKEN`/`apiKeyHelper` setup hides the command entirely.
 
 ## When to use routines vs other scheduling
 
 | Need | Use |
 |------|-----|
-| Runs unattended in cloud, survives laptop off | **Routine** (this skill) |
-| Runs inside the current REPL session only | `CronCreate` (in-session) |
-| Runs on your own machine with local file/MCP access | Desktop scheduled task |
-| One-shot reminder later today | `CronCreate` with `recurring: false` |
+| Runs unattended in cloud, survives laptop off | **Cloud routine** (this skill) |
+| Needs local files, local MCP servers, or local env | **Desktop scheduled task** — Desktop Code tab → Routines → New routine → Local. Runs on your machine, 1-minute minimum, full local access. Only fires while the Desktop app is open and the machine is awake. |
+| Runs inside the current REPL session only | `/loop` (in-session; jobs expire with the session) |
+| One-shot reminder later | One-off schedule on either a cloud routine or a Desktop task — fires once, then auto-disables |
 
-**Hard constraint**: routines run in Anthropic cloud. They have **no access to**:
-- Chrome DevTools MCP (logged-in browser sessions)
+**Cloud vs local — decide this first.** A *cloud* routine runs on Anthropic-managed infrastructure (or your organization's self-hosted environment when routed there), so it has **no access to**:
+- A logged-in browser (Chrome DevTools MCP)
 - Local files outside the cloned repo
 - Local `.env` variables
-- Local MCPs, local notes and documents not in the GitHub repo, or anything else on your machine
+- Local MCP servers, unless they're declared in a committed `.mcp.json` in the cloned repo or re-added as a connector at claude.ai/customize/connectors
+- Anything else on the machine
 
-If the task needs any of those, either adapt it to use WebFetch/WebSearch + API calls (with secrets added to the cloud env), or use a local scheduler instead.
+If the task needs any of that, don't contort the cloud routine — create a **Desktop scheduled task** instead (Desktop Code tab → Routines → New routine → Local, or just describe it in a Desktop session). Local tasks live at `~/.claude/scheduled-tasks/<name>/SKILL.md`, run with full local file and MCP access, allow intervals down to 1 minute, and are managed with the `mcp__scheduled-tasks__*` tools. The trade: they only fire while the Desktop app is open and the computer is awake, and a missed run gets at most one catch-up.
 
 ## Canonical creation body (tested, works)
 
@@ -88,10 +91,9 @@ These are per-account, so look them up rather than guessing:
 
 ## Cron conventions
 
-- **Cron is UTC**. Work out the user's local timezone, convert, and confirm the local time back to them before creating anything — this is the single easiest thing to get wrong.
+- **Timezone.** The web form and `/schedule` take local wall-clock time and convert automatically. A raw `cron_expression` sent through `RemoteTrigger` is **UTC** — convert it yourself and confirm the local time back to the user before creating anything.
 - **Minimum interval: 1 hour**. `*/30 * * * *` is rejected.
-- **Avoid minute 0 and 30** — every routine on the platform lands on those. Pick an off-minute (`:07`, `:17`, `:43`, `:51`).
-- **Stagger multiple daily routines** by 15+ min so they don't compete for resources.
+- **Stagger is automatic.** The platform offsets each routine by a few minutes, consistently per routine, so runs don't pile up. Picking an off-minute (`:07`, `:43`) is still tidy but no longer necessary.
 
 Examples, for a user on US Pacific time during PDT (UTC-7):
 - Daily at 8 AM local -> `17 15 * * *`
@@ -144,7 +146,7 @@ Routines should write results to the cloned repo on a `claude/*` branch (the def
 
 1. Write a markdown report to a predictable path in the repo — something like `reports/{routine-name}/YYYY-MM-DD-HHmm-report.md`. Agree the folder with the user; the point is that every run lands somewhere they can find.
 2. Commit to a `claude/{routine-name}-YYYY-MM-DD` branch
-3. Also print the report to stdout so it shows in the session transcript at claude.ai/code/scheduled/{trigger_id}
+3. Also print the report to stdout so it shows in the session transcript at claude.ai/code/routines/{trigger_id}
 
 The user can open the session URL to see output, or pull the branch if they want the file.
 
@@ -171,7 +173,7 @@ Never hardcode secrets in prompts — they're logged.
 ```
 RemoteTrigger({action: "run", trigger_id: "trig_01..."})
 ```
-Returns the trigger config (not the session URL — fire is async; the session appears at claude.ai/code/scheduled/{trigger_id}).
+Returns the trigger config (not the session URL — fire is async; the session appears at claude.ai/code/routines/{trigger_id}).
 
 **Via HTTP (for webhooks)**:
 ```
@@ -184,9 +186,9 @@ Content-Type: application/json
 {"text": "freeform context appended to the saved prompt"}
 ```
 
-The `text` field is a single string appended as a user turn. Max 65,536 chars. If sending a JSON webhook payload, stringify it — the routine can parse the string in its prompt.
+The `text` field is freeform and is not parsed — send JSON and the routine receives a literal string. It does **not** arrive as a bare user message: it's wrapped in a `<routine-fire-payload>` block labeled as untrusted data, and Claude is told not to follow instructions inside it unless the routine's own prompt says to. **The saved prompt must opt in explicitly** — e.g. "Investigate the alert described in the routine-fire-payload block" — or the text is inert context. The same wrapping applies to text supplied with **Run now**. Max 65,536 chars.
 
-**Generating the per-routine token**: Web UI only. Open the routine at https://claude.ai/code/scheduled, click the pencil -> Add another trigger -> API -> Generate token. Shown once, can't be retrieved.
+**Generating the per-routine token**: Web UI only. Open the routine at https://claude.ai/code/routines, click the pencil -> Add another trigger -> API -> Generate token. Shown once, can't be retrieved.
 
 ## Trigger types and how to add them
 
@@ -194,7 +196,7 @@ The `text` field is a single string appended as a user turn. Max 65,536 chars. I
 |---------|-------------|-------|
 | Schedule | `RemoteTrigger create` (this skill) or web UI | Cron in UTC, min 1h |
 | API | Web UI only (generates bearer token) | Attach to existing routine |
-| GitHub event | Web UI only | Requires Claude GitHub App installed on repo |
+| GitHub event | Web UI, or CLI via `/schedule` (v2.1.225+) — requires the Claude GitHub App installed on the repo | — |
 
 A single routine can have multiple triggers.
 
@@ -212,9 +214,13 @@ RemoteTrigger({action: "update", trigger_id: "trig_01...", body: {"cron_expressi
 
 # Fire now
 RemoteTrigger({action: "run", trigger_id: "trig_01..."})
+
+# Inspect runs
+RemoteTrigger({action: "list_runs", trigger_id: "trig_01..."})
+RemoteTrigger({action: "get_run_log", session_id: "session_01..."})
 ```
 
-**Cannot delete via API**. Go to https://claude.ai/code/scheduled to delete.
+**Cannot delete via API**. Go to https://claude.ai/code/routines to delete.
 
 **Pausing**: set `"enabled": false` via update. Re-enable by setting back to `true`.
 
@@ -227,14 +233,14 @@ RemoteTrigger({action: "run", trigger_id: "trig_01..."})
 | `session_request.worker: Field required` | Used old `session_request` shape | Switch to `job_config.ccr` (v2 shape) |
 | `invalid cron expression` | Interval < 1h, or 6-field cron | Use 5-field, >= 1h |
 | `proto: unknown field "type"` | Added unknown top-level field | Remove non-schema fields |
-| Session fires but does nothing visible | Expected — fire is async, output is in session URL | Check claude.ai/code/scheduled/{trigger_id} |
+| Session fires but does nothing visible | Expected — fire is async, output is in session URL | Check claude.ai/code/routines/{trigger_id} |
 
 ## Workflow checklist
 
 When the user asks for a new routine:
 
 1. **Clarify the task** — what runs, when, what output, what secrets needed
-2. **Check constraints** — does it need a logged-in browser, local files, or local env? If yes, redirect to a local scheduler
+2. **Cloud or local?** If the task touches local files, a localhost MCP, a logged-in browser, or local env vars, stop and build a Desktop scheduled task instead. Only continue here if the work is genuinely repo- and connector-shaped.
 3. **Pick schedule** — UTC, off-:00 minute, staggered against existing routines (check `RemoteTrigger list`)
 4. **Pick tools** — minimum viable set (avoid adding WebFetch if not needed)
 5. **Draft prompt** — self-contained, specific steps, explicit output format + save path, graceful handling of missing secrets
@@ -244,6 +250,10 @@ When the user asks for a new routine:
 9. **Report back** — trigger ID, schedule in the user's local time, session URL, any secrets still needed
 10. **Say plainly what is still outstanding** if secrets or repo access are pending — a routine that fires without its key fails quietly on a schedule
 
+## Limits
+
+Routines draw down subscription usage like any session, plus a per-account **daily cap on runs**. One-off runs are exempt from the cap. Current consumption is at claude.ai/code/routines. A green run status means the session started and exited cleanly — not that the task succeeded. Open the run and read it.
+
 ## Reference: what already exists
 
-Run `RemoteTrigger({action: "list"})` for the current set before creating anything, so new routines don't collide with existing ones. Past run history is at https://claude.ai/code/scheduled.
+Run `RemoteTrigger({action: "list"})` for the current set before creating anything, so new routines don't collide with existing ones. Past run history is at https://claude.ai/code/routines.

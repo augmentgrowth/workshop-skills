@@ -6,13 +6,21 @@ Skills for the Cobalt AI Workshop. You don't need a GitHub account, and you don'
 
 ## How to install these
 
-Paste this page's web address into Claude Code, and add:
+Open a Claude Code session **in your second brain folder** — the folder where you keep your work. That matters for the second prompt.
 
-> **Install this for me on this computer so it's available in every Code session.**
+Then paste these two prompts, one after the other.
 
-That's it. Claude will read this page, put each skill where it belongs, and tell you what to say to use them.
+**Prompt 1 — the general-purpose skills, for your whole computer:**
 
-Claude will use the folder you're currently working in for most of these skills. If it asks where you keep your writing, just name that folder.
+> **Install the skills from github.com/augmentgrowth/workshop-skills for me at the user level, so they're available in every Code session — grill-me, humanizer, ce-brainstorm, ce-plan, ce-work, ce-handoff, skill-creator, and routine-builder.**
+
+**Prompt 2 — the skills that belong with your work:**
+
+> **From github.com/augmentgrowth/workshop-skills, install voice-skill-builder, cobalt-design, cobalt-voice, call-summary and daily-briefing into this folder's skills, so they only load when I'm working in my second brain.**
+
+Two prompts, on purpose. The first set are general tools you want everywhere. The second set belong to your work — the Cobalt brand skills shouldn't fire on your personal writing, and the voice builder writes your own MyVoice skill into that same folder.
+
+That's it. Claude reads this page and does the rest, then tells you what to say to use each one.
 
 ---
 
@@ -62,6 +70,18 @@ Builds a focused morning brief: your top priority, today's meetings with prep no
 
 **Say:** *"give me my daily briefing"*
 
+### cobalt-design
+
+Applies Cobalt Service Partners' brand system — the approved colors, type, and logos — to anything you ask Claude to make look finished: a one-pager, a report, a deck outline, an HTML page.
+
+**Say:** *"make this client-ready in Cobalt's look"*
+
+### cobalt-voice
+
+Cobalt's writing voice, so anything written for Cobalt's audiences sounds like Cobalt rather than generic private-equity marketing. It stays out of the way for ordinary personal writing.
+
+**Say:** *"write this in Cobalt's voice"*
+
 ---
 
 ### The project skills: ce-brainstorm, ce-plan, ce-work, ce-handoff
@@ -104,7 +124,7 @@ There's also a small practice pack here — a fictional meeting transcript and i
 
 ## Credits
 
-`grill-me` is adapted from [Matt Pocock's skills](https://github.com/mattpocock/skills) (MIT). `humanizer` is adapted from [Siqi Chen's humanizer](https://github.com/blader/humanizer) (MIT), which builds on Wikipedia's "Signs of AI writing." `ce-brainstorm`, `ce-plan`, `ce-work`, and `ce-handoff` are adapted from [Every's compound-engineering plugin](https://github.com/EveryInc/compound-engineering-plugin) (MIT), version 3.20.0, and trimmed to stand alone outside that plugin. `skill-creator` is Anthropic's, redistributed unchanged from the [official Claude Code plugin marketplace](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator) (Apache 2.0). `routine-builder` is Augment Growth's own. `call-summary` and `daily-briefing` are Anthropic's, redistributed unchanged from the official [knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) repository (Apache 2.0). Full attribution and license texts are in [NOTICE.md](NOTICE.md).
+`grill-me` is adapted from [Matt Pocock's skills](https://github.com/mattpocock/skills) (MIT). `humanizer` is adapted from [Siqi Chen's humanizer](https://github.com/blader/humanizer) (MIT), which builds on Wikipedia's "Signs of AI writing." `ce-brainstorm`, `ce-plan`, `ce-work`, and `ce-handoff` are adapted from [Every's compound-engineering plugin](https://github.com/EveryInc/compound-engineering-plugin) (MIT), version 3.20.0, and trimmed to stand alone outside that plugin. `skill-creator` is Anthropic's, redistributed unchanged from the [official Claude Code plugin marketplace](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator) (Apache 2.0). `routine-builder` is Augment Growth's own. `cobalt-design` and `cobalt-voice` carry Cobalt Service Partners' brand system and voice; the marks and brand are Cobalt's, published here for Cobalt and its partner companies. `call-summary` and `daily-briefing` are Anthropic's, redistributed unchanged from the official [knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) repository (Apache 2.0). Full attribution and license texts are in [NOTICE.md](NOTICE.md).
 
 ---
 ---
@@ -200,6 +220,18 @@ Fetch each of these over plain HTTPS. Do not use `git`, the GitHub API, or any a
 | `ce-work` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/ce-work/references/shipping-workflow.md` | `ce-work/references/shipping-workflow.md` |
 | `ce-work` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/ce-work/references/tracker-defer.md` | `ce-work/references/tracker-defer.md` |
 | `ce-handoff` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/ce-handoff/SKILL.md` | `ce-handoff/SKILL.md` |
+| `cobalt-design` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/cobalt-design/SKILL.md` | `cobalt-design/SKILL.md` |
+| `cobalt-design` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/cobalt-design/README.md` | `cobalt-design/README.md` |
+| `cobalt-design` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/cobalt-design/references/design-tokens.md` | `cobalt-design/references/design-tokens.md` |
+| `cobalt-design` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/cobalt-design/assets/logos/LOGO_Cobalt_blue_full_dark.png` | `cobalt-design/assets/logos/LOGO_Cobalt_blue_full_dark.png` |
+| `cobalt-design` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/cobalt-design/assets/logos/LOGO_Cobalt_blue_full_lite.png` | `cobalt-design/assets/logos/LOGO_Cobalt_blue_full_lite.png` |
+| `cobalt-design` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/cobalt-design/assets/logos/LOGO_Cobalt_blue_image_only.png` | `cobalt-design/assets/logos/LOGO_Cobalt_blue_image_only.png` |
+| `cobalt-design` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/cobalt-design/assets/logos/LOGO_Cobalt_white_full.png` | `cobalt-design/assets/logos/LOGO_Cobalt_white_full.png` |
+| `cobalt-design` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/cobalt-design/assets/logos/LOGO_Cobalt_white_image_only.png` | `cobalt-design/assets/logos/LOGO_Cobalt_white_image_only.png` |
+| `cobalt-voice` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/cobalt-voice/SKILL.md` | `cobalt-voice/SKILL.md` |
+| `cobalt-voice` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/cobalt-voice/README.md` | `cobalt-voice/README.md` |
+| `cobalt-voice` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/cobalt-voice/references/voice-profile.md` | `cobalt-voice/references/voice-profile.md` |
+| `cobalt-voice` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/cobalt-voice/references/examples.md` | `cobalt-voice/references/examples.md` |
 
 `voice-skill-builder` needs both of its files. Without `references/framework.md` it fails partway through, silently. The same applies, much more so, to the four `ce-` skills: they load their `references/` files on demand mid-run, and a missing one stops the skill at that point with no warning at install time. The same applies to `skill-creator`, which loads its `agents/`, `references/`, and `assets/` files mid-run and shells out to the Python under `scripts/` and `eval-viewer/`. Its `scripts/__init__.py` looks empty and is not — the `python -m scripts.<name>` calls in the skill fail without it. `routine-builder` is a single file with nothing to miss.
 
@@ -209,15 +241,15 @@ Fetch every row listed for a skill, or don't install that skill. Preserve the `r
 
 ### Where each one goes
 
-Two destinations, on purpose.
+Two destinations, on purpose. **The user's own prompt names the destination for each set — follow it.** Do not ask them to choose, and do not consolidate everything into one place because it seems simpler.
 
-**Do not ask the user to choose between global and project.** The install sentence they were given says "available in every Code session" — that phrasing is from our workshop script and refers to `grill-me`. It is not an instruction to install everything globally, and it does not override the split below. Treat the split as already decided, follow it, and explain it afterward in one sentence.
+**User level (available in every Code session): `grill-me`, `humanizer`, `ce-brainstorm`, `ce-plan`, `ce-work`, `ce-handoff`, `skill-creator`, `routine-builder`.** These are general-purpose tools — the user should reach them from any project, not only one folder. Work out the correct user-level skills directory for the operating system you are actually running on — do not assume macOS or Linux paths, and do not print a path with `~` to a Windows user.
 
-**`grill-me` → the user's global skills folder.** They should be able to grill any plan in any session, in any project. Work out the correct global skills directory for the operating system you are actually running on — do not assume macOS or Linux paths, and do not print a path with `~` to a Windows user.
+**Project level: `voice-skill-builder`, `cobalt-design`, `cobalt-voice`, `call-summary`, `daily-briefing`** — into a `.claude/skills` directory inside the folder they work in (their second brain). These belong to the user's work rather than their whole machine. `cobalt-design` and `cobalt-voice` carry a client's brand and should not fire on personal writing. `voice-skill-builder` writes the user's own voice skill into that same folder, so keeping the builder beside its output makes the destination unambiguous. `call-summary` and `daily-briefing` act on work material that lives there.
 
-**`humanizer`, `voice-skill-builder`, `skill-creator`, `routine-builder`, `call-summary`, `daily-briefing`, and the four `ce-` skills → a project-level skills folder**, inside a `.claude/skills` directory in the folder they write in. These are writing and project tools; they belong with the work they act on. The four `ce-` skills write plan documents into a `docs/plans` folder in whatever project they're used in, so installing them project-level keeps each project's plans with that project. `skill-creator` writes new skills and a workspace folder into the project it's run from, for the same reason.
+If the user only pastes one of the two prompts, install what that prompt names, to the destination that prompt names, and tell them the other set is still waiting.
 
-Default to the folder they are already working in, creating `.claude/skills` there if it doesn't exist. Do not stop to ask permission for this — install, then tell them which folder you used, that these work while they're in *that* folder and not elsewhere, and that they can ask you to move them. Ask which folder they mean only if there is genuinely no working folder to use.
+Default to the folder they are already working in, creating `.claude/skills` there if it doesn't exist. Do not stop to ask permission for this — install, then tell them which folders you used and that the project-level ones work while they're in *that* folder and not elsewhere. Ask which folder they mean only if there is genuinely no working folder to use.
 
 ### The exercise pack (project setup, not a skill install)
 
@@ -237,8 +269,8 @@ If the user asks you to **set up a project from this repo's meeting pack** (the 
 Tell them, in plain language:
 
 1. What you installed and where each one landed — name the actual folders.
-2. How to start each skill: say *"grill me on this"* or *"humanize this draft"* in plain English; type `/voice-skill-builder` for the voice builder — that one is deliberately manual and will not start on its own; type `/skill-creator` to build a skill and `/routine-builder` to set up a scheduled cloud agent (or just ask for either in plain English); and type `/ce-brainstorm`, `/ce-plan`, `/ce-work`, or `/ce-handoff` for the project skills, which can also start on their own when the request obviously matches one.
-3. That `grill-me` works everywhere, while everything else works while they're in that project folder.
+2. How to start each skill: say *"grill me on this"* or *"humanize this draft"* in plain English; type `/voice-skill-builder` for the voice builder — that one is deliberately manual and will not start on its own; type `/skill-creator` to build a skill and `/routine-builder` to set up a scheduled cloud agent (or just ask for either in plain English); and type `/ce-brainstorm`, `/ce-plan`, `/ce-work`, or `/ce-handoff` for the workflow skills, which can also start on their own when the request obviously matches one; and for the two Cobalt brand skills, just ask for on-brand or Cobalt-voiced work — they fire on their own.
+3. Which ones work everywhere (`grill-me`, `humanizer`, the four `ce-` skills, `skill-creator`, `routine-builder`) and which ones only work while they're in their second brain folder (`voice-skill-builder`, `cobalt-design`, `cobalt-voice`, `call-summary`, `daily-briefing`).
 3b. That the four `ce-` skills are built for software projects: `ce-brainstorm` and `ce-plan` are useful for any multi-step work, but `ce-work` expects a code project it can run tests in and save changes to. Say this plainly rather than letting them discover it mid-run.
 3c. That `skill-creator`, `routine-builder`, `call-summary`, and `daily-briefing` are for Workshop 2 — they're installed and ready, and there's nothing to do with them yet. Mention two practical things rather than letting them hit these mid-session: `skill-creator` runs Python scripts and opens a results page in the browser, and `routine-builder` creates agents that run in Anthropic's cloud, so a routine needs a GitHub repository to write into and cannot see anything on their own computer — the local alternative, for tasks that do need their own files, is a Desktop scheduled task.
 4. That they may need to start a new Claude Code session before the skills become active.

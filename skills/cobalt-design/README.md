@@ -2,13 +2,13 @@
 
 Official Cobalt Service Partners brand system for Claude Code — colors, typography, and logo usage — so anything you ask for comes out on-brand.
 
-> Cobalt internal. For use by Cobalt and its portfolio companies — please don't republish or share outside.
+> Cobalt Service Partners brand assets, published here for Cobalt and its partner companies. The marks and brand system belong to Cobalt — use them for Cobalt work, not for anything else.
 
 ## Install (one prompt)
 
-With this folder (or the zip) in your **Downloads**, open a Claude Code session in your **second brain** folder and say:
+This skill ships in the workshop-skills repository. Open a Claude Code session in your **second brain** folder and say:
 
-> The cobalt-design skill is in my Downloads — install it into this folder's skills so it's available whenever I work in my second brain.
+> From github.com/augmentgrowth/workshop-skills, install cobalt-design into this folder's skills so it's available whenever I work in my second brain.
 
 Claude will place it at `.claude/skills/cobalt-design/` inside your second brain. That's the recommended home: the skill travels with your work, and every session you start there can use it.
 

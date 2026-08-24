@@ -71,4 +71,4 @@ Files ship in `assets/logos/`.
 
 ---
 
-Cobalt brand assets — internal use by Cobalt and its portfolio companies; do not republish.
+Cobalt brand assets — for use by Cobalt and its partner companies on Cobalt work. The marks belong to Cobalt; don't apply them to anything else.

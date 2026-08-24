@@ -144,7 +144,7 @@ Anthropic's name and marks are used only to identify the origin of this skill, a
 Apache 2.0 section 6 permits. Nothing here implies Anthropic endorses this repo or
 the workshop.
 
-## routines
+## routine-builder
 
 Written by Malachi Rose / Augment Growth. Covered by the repository `LICENSE`.
 

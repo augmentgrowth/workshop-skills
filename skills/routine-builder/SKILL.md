@@ -1,6 +1,6 @@
 ---
-name: routines
-description: Create, fire, and manage Claude Code cloud routines (scheduled/API/GitHub-triggered remote agents). Use when asked to set up a recurring remote agent, a webhook-triggered workflow, automate a daily/weekly task in the cloud, schedule a cron job for Claude Code, or anything involving claude.ai/code/routines. Triggers on "routine", "schedule a remote agent", "webhook to Claude", "daily/weekly Claude job", "cron routine", or /routines.
+name: routine-builder
+description: Create, fire, and manage Claude Code cloud routines (scheduled/API/GitHub-triggered remote agents). Use when asked to set up a recurring remote agent, a webhook-triggered workflow, automate a daily/weekly task in the cloud, schedule a cron job for Claude Code, or anything involving claude.ai/code/routines. Triggers on "routine", "schedule a remote agent", "webhook to Claude", "daily/weekly Claude job", "cron routine", or /routine-builder.
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash, ToolSearch, WebFetch, RemoteTrigger
 license: MIT
 metadata:

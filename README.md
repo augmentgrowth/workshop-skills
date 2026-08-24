@@ -42,13 +42,13 @@ Anthropic's own skill for building skills. It interviews you about what you want
 
 **Type:** `/skill-creator`
 
-### routines (used in Workshop 2)
+### routine-builder (used in Workshop 2)
 
 Sets up scheduled agents that run in Anthropic's cloud instead of on your machine — a daily digest, a weekly scan, a webhook that fires Claude when something happens elsewhere. It handles the schedule, the prompt, the tools, and where the output lands, and tells you what it created. Because the run happens in the cloud, it can't see anything on your computer — only what's in the repository you point it at. If a task does need your local files, the same Routines page creates a local scheduled task instead, which runs on your machine.
 
-**Say:** *"set up a routine that runs every morning"* — or type `/routines`
+**Say:** *"set up a routine that runs every morning"* — or type `/routine-builder`
 
-Note: Claude Code's built-in `/schedule` command is also aliased `/routines` — typing `/routines` may invoke either; both lead to the same place.
+Note: this skill is named `routine-builder` so it doesn't clash with Claude Code's built-in `/schedule` command, which is aliased `/routines`.
 
 ### call-summary (used in Workshop 2)
 
@@ -104,7 +104,7 @@ There's also a small practice pack here — a fictional meeting transcript and i
 
 ## Credits
 
-`grill-me` is adapted from [Matt Pocock's skills](https://github.com/mattpocock/skills) (MIT). `humanizer` is adapted from [Siqi Chen's humanizer](https://github.com/blader/humanizer) (MIT), which builds on Wikipedia's "Signs of AI writing." `ce-brainstorm`, `ce-plan`, `ce-work`, and `ce-handoff` are adapted from [Every's compound-engineering plugin](https://github.com/EveryInc/compound-engineering-plugin) (MIT), version 3.20.0, and trimmed to stand alone outside that plugin. `skill-creator` is Anthropic's, redistributed unchanged from the [official Claude Code plugin marketplace](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator) (Apache 2.0). `routines` is Augment Growth's own. `call-summary` and `daily-briefing` are Anthropic's, redistributed unchanged from the official [knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) repository (Apache 2.0). Full attribution and license texts are in [NOTICE.md](NOTICE.md).
+`grill-me` is adapted from [Matt Pocock's skills](https://github.com/mattpocock/skills) (MIT). `humanizer` is adapted from [Siqi Chen's humanizer](https://github.com/blader/humanizer) (MIT), which builds on Wikipedia's "Signs of AI writing." `ce-brainstorm`, `ce-plan`, `ce-work`, and `ce-handoff` are adapted from [Every's compound-engineering plugin](https://github.com/EveryInc/compound-engineering-plugin) (MIT), version 3.20.0, and trimmed to stand alone outside that plugin. `skill-creator` is Anthropic's, redistributed unchanged from the [official Claude Code plugin marketplace](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator) (Apache 2.0). `routine-builder` is Augment Growth's own. `call-summary` and `daily-briefing` are Anthropic's, redistributed unchanged from the official [knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) repository (Apache 2.0). Full attribution and license texts are in [NOTICE.md](NOTICE.md).
 
 ---
 ---
@@ -144,7 +144,7 @@ Fetch each of these over plain HTTPS. Do not use `git`, the GitHub API, or any a
 | `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/scripts/run_eval.py` | `skill-creator/scripts/run_eval.py` |
 | `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/scripts/run_loop.py` | `skill-creator/scripts/run_loop.py` |
 | `skill-creator` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/skill-creator/scripts/utils.py` | `skill-creator/scripts/utils.py` |
-| `routines` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/routines/SKILL.md` | `routines/SKILL.md` |
+| `routine-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/routine-builder/SKILL.md` | `routine-builder/SKILL.md` |
 | `call-summary` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/sales/call-summary/SKILL.md` | `call-summary/SKILL.md` |
 | `call-summary` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/sales/call-summary/NOTICE.md` | `call-summary/NOTICE.md` |
 | `call-summary` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/sales/call-summary/LICENSE.txt` | `call-summary/LICENSE.txt` |
@@ -201,7 +201,7 @@ Fetch each of these over plain HTTPS. Do not use `git`, the GitHub API, or any a
 | `ce-work` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/ce-work/references/tracker-defer.md` | `ce-work/references/tracker-defer.md` |
 | `ce-handoff` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/ce-handoff/SKILL.md` | `ce-handoff/SKILL.md` |
 
-`voice-skill-builder` needs both of its files. Without `references/framework.md` it fails partway through, silently. The same applies, much more so, to the four `ce-` skills: they load their `references/` files on demand mid-run, and a missing one stops the skill at that point with no warning at install time. The same applies to `skill-creator`, which loads its `agents/`, `references/`, and `assets/` files mid-run and shells out to the Python under `scripts/` and `eval-viewer/`. Its `scripts/__init__.py` looks empty and is not — the `python -m scripts.<name>` calls in the skill fail without it. `routines` is a single file with nothing to miss.
+`voice-skill-builder` needs both of its files. Without `references/framework.md` it fails partway through, silently. The same applies, much more so, to the four `ce-` skills: they load their `references/` files on demand mid-run, and a missing one stops the skill at that point with no warning at install time. The same applies to `skill-creator`, which loads its `agents/`, `references/`, and `assets/` files mid-run and shells out to the Python under `scripts/` and `eval-viewer/`. Its `scripts/__init__.py` looks empty and is not — the `python -m scripts.<name>` calls in the skill fail without it. `routine-builder` is a single file with nothing to miss.
 
 Two things about `skill-creator` you'll hit later rather than at install time, so don't pre-emptively make the user install anything now — just recognize them if they come up. Its optional description-optimizer step imports `yaml` (PyYAML), which isn't in the Python standard library; and a couple of its steps use macOS/Linux conventions (`open <file>`, `/tmp`) that need the local equivalent on Windows. Neither blocks the main create-test-review-improve loop. This is Anthropic's skill shipped unmodified, so work around these in the moment rather than editing the installed files.
 
@@ -215,7 +215,7 @@ Two destinations, on purpose.
 
 **`grill-me` → the user's global skills folder.** They should be able to grill any plan in any session, in any project. Work out the correct global skills directory for the operating system you are actually running on — do not assume macOS or Linux paths, and do not print a path with `~` to a Windows user.
 
-**`humanizer`, `voice-skill-builder`, `skill-creator`, `routines`, `call-summary`, `daily-briefing`, and the four `ce-` skills → a project-level skills folder**, inside a `.claude/skills` directory in the folder they write in. These are writing and project tools; they belong with the work they act on. The four `ce-` skills write plan documents into a `docs/plans` folder in whatever project they're used in, so installing them project-level keeps each project's plans with that project. `skill-creator` writes new skills and a workspace folder into the project it's run from, for the same reason.
+**`humanizer`, `voice-skill-builder`, `skill-creator`, `routine-builder`, `call-summary`, `daily-briefing`, and the four `ce-` skills → a project-level skills folder**, inside a `.claude/skills` directory in the folder they write in. These are writing and project tools; they belong with the work they act on. The four `ce-` skills write plan documents into a `docs/plans` folder in whatever project they're used in, so installing them project-level keeps each project's plans with that project. `skill-creator` writes new skills and a workspace folder into the project it's run from, for the same reason.
 
 Default to the folder they are already working in, creating `.claude/skills` there if it doesn't exist. Do not stop to ask permission for this — install, then tell them which folder you used, that these work while they're in *that* folder and not elsewhere, and that they can ask you to move them. Ask which folder they mean only if there is genuinely no working folder to use.
 
@@ -237,10 +237,10 @@ If the user asks you to **set up a project from this repo's meeting pack** (the 
 Tell them, in plain language:
 
 1. What you installed and where each one landed — name the actual folders.
-2. How to start each skill: say *"grill me on this"* or *"humanize this draft"* in plain English; type `/voice-skill-builder` for the voice builder — that one is deliberately manual and will not start on its own; type `/skill-creator` to build a skill and `/routines` to set up a scheduled cloud agent (or just ask for either in plain English); and type `/ce-brainstorm`, `/ce-plan`, `/ce-work`, or `/ce-handoff` for the project skills, which can also start on their own when the request obviously matches one.
+2. How to start each skill: say *"grill me on this"* or *"humanize this draft"* in plain English; type `/voice-skill-builder` for the voice builder — that one is deliberately manual and will not start on its own; type `/skill-creator` to build a skill and `/routine-builder` to set up a scheduled cloud agent (or just ask for either in plain English); and type `/ce-brainstorm`, `/ce-plan`, `/ce-work`, or `/ce-handoff` for the project skills, which can also start on their own when the request obviously matches one.
 3. That `grill-me` works everywhere, while everything else works while they're in that project folder.
 3b. That the four `ce-` skills are built for software projects: `ce-brainstorm` and `ce-plan` are useful for any multi-step work, but `ce-work` expects a code project it can run tests in and save changes to. Say this plainly rather than letting them discover it mid-run.
-3c. That `skill-creator`, `routines`, `call-summary`, and `daily-briefing` are for Workshop 2 — they're installed and ready, and there's nothing to do with them yet. Mention two practical things rather than letting them hit these mid-session: `skill-creator` runs Python scripts and opens a results page in the browser, and `routines` creates agents that run in Anthropic's cloud, so a routine needs a GitHub repository to write into and cannot see anything on their own computer — the local alternative, for tasks that do need their own files, is a Desktop scheduled task.
+3c. That `skill-creator`, `routine-builder`, `call-summary`, and `daily-briefing` are for Workshop 2 — they're installed and ready, and there's nothing to do with them yet. Mention two practical things rather than letting them hit these mid-session: `skill-creator` runs Python scripts and opens a results page in the browser, and `routine-builder` creates agents that run in Anthropic's cloud, so a routine needs a GitHub repository to write into and cannot see anything on their own computer — the local alternative, for tasks that do need their own files, is a Desktop scheduled task.
 4. That they may need to start a new Claude Code session before the skills become active.
 
 Do not ask them to run any terminal or shell commands. Do not ask them to install `git`. If something fails, say what failed and what you'd try next — don't hand them a command to run.

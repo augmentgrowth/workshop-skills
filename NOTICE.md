@@ -178,3 +178,13 @@ account and one machine. Sanitized for publication —
 Written by Malachi Rose / Augment Growth. Covered by the repository `LICENSE`.
 
 Changed from the original: the earlier internal version wrote its output to hosted-sandbox paths (`/home/claude/`, `/mnt/user-data/outputs/`), which do not exist on a personal Mac or Windows machine. This copy writes relative to the user's working directory and detects the sandbox case instead of assuming it, and derives a Windows-safe slug for the generated skill folder.
+
+## call-summary and daily-briefing
+
+The `call-summary` and `daily-briefing` skills are **Anthropic's**, redistributed unchanged from the official knowledge-work-plugins repository (sales plugin).
+
+- Source: https://github.com/anthropics/knowledge-work-plugins
+- Paths: `sales/skills/call-summary/`, `sales/skills/daily-briefing/`
+- Commit: `16d1ab5`
+- Retrieved: 2026-08-23
+- License: Apache 2.0 — full text ships as `LICENSE.txt` inside each skill folder (`skills/sales/call-summary/`, `skills/sales/daily-briefing/`), per the license's redistribution terms.

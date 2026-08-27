@@ -16,7 +16,7 @@ Then paste these two prompts, one after the other.
 
 **Prompt 2 — the skills that belong with your work:**
 
-> **From github.com/augmentgrowth/workshop-skills, install voice-skill-builder, cobalt-design, cobalt-voice, call-summary and daily-briefing into this folder's skills, so they only load when I'm working in my second brain.**
+> **From github.com/augmentgrowth/workshop-skills, install voice-skill-builder, cobalt-design, cobalt-voice, call-summary, daily-briefing and my-brand-skills-builder into this folder's skills, so they only load when I'm working in my second brain.**
 
 Two prompts, on purpose. The first set are general tools you want everywhere. The second set belong to your work — the Cobalt brand skills shouldn't fire on your personal writing, and the voice builder writes your own MyVoice skill into that same folder.
 
@@ -81,6 +81,12 @@ Applies Cobalt Service Partners' brand system — the approved colors, type, and
 Cobalt's writing voice, so anything written for Cobalt's audiences sounds like Cobalt rather than generic private-equity marketing. It stays out of the way for ordinary personal writing.
 
 **Say:** *"write this in Cobalt's voice"*
+
+### my-brand-skills-builder (Build Labs bonus)
+
+Builds the same kind of brand package for **your own company** that the two Cobalt skills came from. Point it at your website, a brand PDF, or a document that already sounds like you, and it produces an installed voice skill and design skill for your brand — plus a voice guide, a design spec rendered in your own colors and fonts, and demo artifacts, so you can see whether it got your brand right before you trust it.
+
+**Say:** *"build my brand skills — our site is example.com"*
 
 ---
 
@@ -171,6 +177,31 @@ Fetch each of these over plain HTTPS. Do not use `git`, the GitHub API, or any a
 | `daily-briefing` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/sales/daily-briefing/SKILL.md` | `daily-briefing/SKILL.md` |
 | `daily-briefing` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/sales/daily-briefing/NOTICE.md` | `daily-briefing/NOTICE.md` |
 | `daily-briefing` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/sales/daily-briefing/LICENSE.txt` | `daily-briefing/LICENSE.txt` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/README.md` | `my-brand-skills-builder/README.md` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/SKILL.md` | `my-brand-skills-builder/SKILL.md` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/assets/brand_voice_template.md` | `my-brand-skills-builder/assets/brand_voice_template.md` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/assets/quick_reference_template.md` | `my-brand-skills-builder/assets/quick_reference_template.md` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/examples/DESIGN.md` | `my-brand-skills-builder/examples/DESIGN.md` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/references/bootstrap.md` | `my-brand-skills-builder/references/bootstrap.md` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/references/brand-contract.md` | `my-brand-skills-builder/references/brand-contract.md` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/references/brand_voice_examples.md` | `my-brand-skills-builder/references/brand_voice_examples.md` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/references/demo-generation.md` | `my-brand-skills-builder/references/demo-generation.md` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/references/design-skill-wrap.md` | `my-brand-skills-builder/references/design-skill-wrap.md` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/references/design-tokens-generation.md` | `my-brand-skills-builder/references/design-tokens-generation.md` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/references/maintenance.md` | `my-brand-skills-builder/references/maintenance.md` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/references/messaging_frameworks.md` | `my-brand-skills-builder/references/messaging_frameworks.md` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/references/pdf-styling.md` | `my-brand-skills-builder/references/pdf-styling.md` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/references/validation.md` | `my-brand-skills-builder/references/validation.md` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/references/voice-guide-generation.md` | `my-brand-skills-builder/references/voice-guide-generation.md` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/references/voice_spectrum_framework.md` | `my-brand-skills-builder/references/voice_spectrum_framework.md` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/scripts/build_pdf.py` | `my-brand-skills-builder/scripts/build_pdf.py` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/scripts/build_screenshots.py` | `my-brand-skills-builder/scripts/build_screenshots.py` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/scripts/derive_css_from_design.py` | `my-brand-skills-builder/scripts/derive_css_from_design.py` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/scripts/validate_voice_skill.py` | `my-brand-skills-builder/scripts/validate_voice_skill.py` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/templates/START-HERE.md.tmpl` | `my-brand-skills-builder/templates/START-HERE.md.tmpl` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/templates/brand_in_action.md.tmpl` | `my-brand-skills-builder/templates/brand_in_action.md.tmpl` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/templates/brand_showcase.html.tmpl` | `my-brand-skills-builder/templates/brand_showcase.html.tmpl` |
+| `my-brand-skills-builder` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/my-brand-skills-builder/templates/welcome_email.html.tmpl` | `my-brand-skills-builder/templates/welcome_email.html.tmpl` |
 | `ce-brainstorm` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/ce-brainstorm/SKILL.md` | `ce-brainstorm/SKILL.md` |
 | `ce-brainstorm` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/ce-brainstorm/references/agents/slack-researcher.md` | `ce-brainstorm/references/agents/slack-researcher.md` |
 | `ce-brainstorm` | `https://raw.githubusercontent.com/augmentgrowth/workshop-skills/main/skills/ce-brainstorm/references/blindspot-pass.md` | `ce-brainstorm/references/blindspot-pass.md` |
@@ -237,7 +268,9 @@ Fetch each of these over plain HTTPS. Do not use `git`, the GitHub API, or any a
 
 Two things about `skill-creator` you'll hit later rather than at install time, so don't pre-emptively make the user install anything now — just recognize them if they come up. Its optional description-optimizer step imports `yaml` (PyYAML), which isn't in the Python standard library; and a couple of its steps use macOS/Linux conventions (`open <file>`, `/tmp`) that need the local equivalent on Windows. Neither blocks the main create-test-review-improve loop. This is Anthropic's skill shipped unmodified, so work around these in the moment rather than editing the installed files.
 
-Fetch every row listed for a skill, or don't install that skill. Preserve the `references/`, `references/agents/`, `agents/`, `assets/`, `scripts/`, and `eval-viewer/` subfolder structure exactly — the skills resolve those paths relative to their own `SKILL.md`. The `NOTICE.md` files carry the license text for the third-party skills and must travel with them — the licenses require it, and the `LICENSE.txt` files must travel with `skill-creator`, `call-summary`, and `daily-briefing` for the same reason. `call-summary` and `daily-briefing` live under `skills/sales/` in this repository but install flat, as `call-summary/` and `daily-briefing/` — use the Save-as column, not the repo path.
+The same on-demand loading applies to `my-brand-skills-builder`: it reads its `references/` files mid-build, runs the Python under `scripts/` itself, and fills in its `templates/` — a missing file stops a brand build partway with no warning at install time.
+
+Fetch every row listed for a skill, or don't install that skill. Preserve the `references/`, `references/agents/`, `agents/`, `assets/`, `scripts/`, `templates/`, `examples/`, and `eval-viewer/` subfolder structure exactly — the skills resolve those paths relative to their own `SKILL.md`. The `NOTICE.md` files carry the license text for the third-party skills and must travel with them — the licenses require it, and the `LICENSE.txt` files must travel with `skill-creator`, `call-summary`, and `daily-briefing` for the same reason. `call-summary` and `daily-briefing` live under `skills/sales/` in this repository but install flat, as `call-summary/` and `daily-briefing/` — use the Save-as column, not the repo path.
 
 ### Where each one goes
 
@@ -245,7 +278,7 @@ Two destinations, on purpose. **The user's own prompt names the destination for 
 
 **User level (available in every Code session): `grill-me`, `humanizer`, `ce-brainstorm`, `ce-plan`, `ce-work`, `ce-handoff`, `skill-creator`, `routine-builder`.** These are general-purpose tools — the user should reach them from any project, not only one folder. Work out the correct user-level skills directory for the operating system you are actually running on — do not assume macOS or Linux paths, and do not print a path with `~` to a Windows user.
 
-**Project level: `voice-skill-builder`, `cobalt-design`, `cobalt-voice`, `call-summary`, `daily-briefing`** — into a `.claude/skills` directory inside the folder they work in (their second brain). These belong to the user's work rather than their whole machine. `cobalt-design` and `cobalt-voice` carry a client's brand and should not fire on personal writing. `voice-skill-builder` writes the user's own voice skill into that same folder, so keeping the builder beside its output makes the destination unambiguous. `call-summary` and `daily-briefing` act on work material that lives there.
+**Project level: `voice-skill-builder`, `cobalt-design`, `cobalt-voice`, `call-summary`, `daily-briefing`, `my-brand-skills-builder`** — into a `.claude/skills` directory inside the folder they work in (their second brain). These belong to the user's work rather than their whole machine. `cobalt-design` and `cobalt-voice` carry a client's brand and should not fire on personal writing. `voice-skill-builder` writes the user's own voice skill into that same folder, so keeping the builder beside its output makes the destination unambiguous. `call-summary` and `daily-briefing` act on work material that lives there. `my-brand-skills-builder` writes the user's brand folder and their two generated brand skills into that same second brain.
 
 If the user only pastes one of the two prompts, install what that prompt names, to the destination that prompt names, and tell them the other set is still waiting.
 
@@ -269,8 +302,8 @@ If the user asks you to **set up a project from this repo's meeting pack** (the 
 Tell them, in plain language:
 
 1. What you installed and where each one landed — name the actual folders.
-2. How to start each skill: say *"grill me on this"* or *"humanize this draft"* in plain English; type `/voice-skill-builder` for the voice builder — that one is deliberately manual and will not start on its own; type `/skill-creator` to build a skill and `/routine-builder` to set up a scheduled cloud agent (or just ask for either in plain English); and type `/ce-brainstorm`, `/ce-plan`, `/ce-work`, or `/ce-handoff` for the workflow skills, which can also start on their own when the request obviously matches one; and for the two Cobalt brand skills, just ask for on-brand or Cobalt-voiced work — they fire on their own.
-3. Which ones work everywhere (`grill-me`, `humanizer`, the four `ce-` skills, `skill-creator`, `routine-builder`) and which ones only work while they're in their second brain folder (`voice-skill-builder`, `cobalt-design`, `cobalt-voice`, `call-summary`, `daily-briefing`).
+2. How to start each skill: say *"grill me on this"* or *"humanize this draft"* in plain English; type `/voice-skill-builder` for the voice builder — that one is deliberately manual and will not start on its own; type `/skill-creator` to build a skill and `/routine-builder` to set up a scheduled cloud agent (or just ask for either in plain English); and type `/ce-brainstorm`, `/ce-plan`, `/ce-work`, or `/ce-handoff` for the workflow skills, which can also start on their own when the request obviously matches one; and for the two Cobalt brand skills, just ask for on-brand or Cobalt-voiced work — they fire on their own. For `my-brand-skills-builder`, say *"build my brand skills"* with a website or brand document in hand — it's a Build Labs bonus, nothing to do with it until then.
+3. Which ones work everywhere (`grill-me`, `humanizer`, the four `ce-` skills, `skill-creator`, `routine-builder`) and which ones only work while they're in their second brain folder (`voice-skill-builder`, `cobalt-design`, `cobalt-voice`, `call-summary`, `daily-briefing`, `my-brand-skills-builder`).
 3b. That the four `ce-` skills are built for software projects: `ce-brainstorm` and `ce-plan` are useful for any multi-step work, but `ce-work` expects a code project it can run tests in and save changes to. Say this plainly rather than letting them discover it mid-run.
 3c. That `skill-creator`, `routine-builder`, `call-summary`, and `daily-briefing` are for Workshop 2 — they're installed and ready, and there's nothing to do with them yet. Mention two practical things rather than letting them hit these mid-session: `skill-creator` runs Python scripts and opens a results page in the browser, and `routine-builder` creates agents that run in Anthropic's cloud, so a routine needs a GitHub repository to write into and cannot see anything on their own computer — the local alternative, for tasks that do need their own files, is a Desktop scheduled task.
 4. That they may need to start a new Claude Code session before the skills become active.

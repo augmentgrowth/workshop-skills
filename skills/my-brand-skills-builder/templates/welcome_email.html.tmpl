@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{{BRAND}} — Welcome Email Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family={{DISPLAY_FONT_URL}}:wght@700;900&family={{BODY_FONT_URL}}:wght@400;500;600&family={{LABEL_FONT_URL}}:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: {{PRIMARY_COLOR}};
+    --secondary: {{SECONDARY_COLOR}};
+    --surface: #FFFFFF;
+    --surface-variant: #F5F8FB;
+    --on-surface: {{TEXT_COLOR}};
+    --on-surface-variant: {{TEXT_VARIANT_COLOR}};
+    --outline: #E5E7EB;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: '{{BODY_FONT}}', system-ui, sans-serif;
+    background: #ECEEF3;
+    padding: 56px 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Mock email client frame */
+  .client {
+    width: 760px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(17, 3, 47, 0.18);
+    border: 1px solid #DADCE3;
+  }
+  .client-toolbar {
+    background: #F5F6F8;
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #E0E2E8;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; background: #D5D7DD; }
+  .dot.red { background: #FF6258; }
+  .dot.yellow { background: #FEBC2D; }
+  .dot.green { background: #28C740; }
+  .client-url {
+    flex: 1;
+    text-align: center;
+    color: #8A8E97;
+    font-size: 0.72rem;
+    font-family: '{{BODY_FONT}}', sans-serif;
+    letter-spacing: 0.04em;
+  }
+
+  /* Email envelope meta */
+  .meta {
+    padding: 22px 32px 14px;
+    border-bottom: 1px solid #EDEFF3;
+    font-family: '{{BODY_FONT}}', sans-serif;
+  }
+  .meta-subject {
+    font-family: '{{LABEL_FONT}}', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--on-surface);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .meta-from {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.78rem;
+    color: #6B6E78;
+  }
+  .meta-from-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, {{PRIMARY_COLOR}}, {{SECONDARY_COLOR}});
+    color: #fff;
+    font-family: '{{LABEL_FONT}}', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .meta-from-name { color: var(--on-surface); font-weight: 600; }
+  .meta-from-email { color: #8A8E97; }
+  .meta-date { margin-left: auto; font-size: 0.72rem; color: #8A8E97; }
+
+  /* Email canvas */
+  .email { background: var(--surface); }
+
+  /* Branded header */
+  .email-header {
+    background: linear-gradient(135deg, {{PRIMARY_COLOR}} 0%, {{PRIMARY_DARK_COLOR}} 55%, {{SECONDARY_COLOR}} 130%);
+    padding: 56px 40px 48px;
+    text-align: left;
+    color: #fff;
+  }
+  .wordmark {
+    font-family: '{{LABEL_FONT}}', sans-serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 36px;
+    text-transform: uppercase;
+  }
+  .header-eyebrow {
+    font-family: '{{LABEL_FONT}}', sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 14px;
+  }
+  .header-headline {
+    font-family: '{{DISPLAY_FONT}}', sans-serif;
+    font-weight: 900;
+    font-size: 3.4rem;
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    color: #fff;
+    max-width: 540px;
+  }
+
+  /* Body */
+  .email-body { padding: 40px 44px 32px; color: var(--on-surface); }
+  .email-greeting {
+    font-family: '{{BODY_FONT}}', sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 18px;
+  }
+  .email-p {
+    font-family: '{{BODY_FONT}}', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    color: var(--on-surface);
+  }
+  .email-callout {
+    background: var(--surface-variant);
+    border-left: 4px solid var(--primary);
+    padding: 20px 22px;
+    margin: 24px 0;
+    font-family: '{{BODY_FONT}}', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--on-surface);
+    border-radius: 0 6px 6px 0;
+  }
+  .email-callout strong {
+    font-family: '{{LABEL_FONT}}', sans-serif;
+    font-weight: 700;
+    color: var(--on-surface-variant);
+  }
+  .email-list { list-style: none; margin: 4px 0 22px; padding: 0; }
+  .email-list li {
+    font-family: '{{BODY_FONT}}', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    padding: 6px 0 6px 26px;
+    position: relative;
+  }
+  .email-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 16px;
+    width: 12px;
+    height: 12px;
+    background: var(--secondary);
+    border-radius: 2px;
+    transform: rotate(45deg);
+  }
+
+  /* CTAs */
+  .cta-row {
+    display: flex;
+    gap: 14px;
+    margin: 28px 0 8px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: '{{LABEL_FONT}}', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 14px 28px;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    letter-spacing: -0.005em;
+  }
+  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-secondary {
+    background: #fff;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 12px 26px;
+  }
+
+  /* Sign-off */
+  .signoff {
+    font-family: '{{BODY_FONT}}', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 26px;
+  }
+  .signoff-name {
+    font-family: '{{LABEL_FONT}}', sans-serif;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-top: 4px;
+  }
+  .ps {
+    font-family: '{{BODY_FONT}}', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--on-surface-variant);
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--outline);
+  }
+
+  /* Footer */
+  .email-footer {
+    background: var(--on-surface-variant);
+    color: rgba(255,255,255,0.78);
+    padding: 28px 44px;
+    font-family: '{{BODY_FONT}}', sans-serif;
+    font-size: 0.78rem;
+    line-height: 1.6;
+  }
+  .footer-accent {
+    height: 4px;
+    background: linear-gradient(90deg, {{PRIMARY_COLOR}}, {{SECONDARY_COLOR}});
+  }
+  .footer-wordmark {
+    font-family: '{{LABEL_FONT}}', sans-serif;
+    font-weight: 900;
+    font-size: 0.95rem;
+    letter-spacing: -0.02em;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .footer-meta {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.72rem;
+    margin-top: 12px;
+  }
+  .footer-meta a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: underline;
+  }
+
+  /* Affirmation strip — optional; remove if brand has no signature affirmation */
+  .affirmation {
+    background: var(--secondary);
+    color: var(--on-surface);
+    text-align: center;
+    padding: 18px 24px;
+    font-family: '{{DISPLAY_FONT}}', sans-serif;
+    font-weight: 900;
+    font-size: 1.35rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="client">
+
+  <!-- Mock client toolbar -->
+  <div class="client-toolbar">
+    <div class="dot red"></div>
+    <div class="dot yellow"></div>
+    <div class="dot green"></div>
+    <div class="client-url">Inbox · {{EMAIL_SUBJECT}}</div>
+  </div>
+
+  <!-- Envelope meta -->
+  <div class="meta">
+    <div class="meta-subject">{{EMAIL_SUBJECT}}</div>
+    <div class="meta-from">
+      <div class="meta-from-avatar">{{SENDER_INITIAL}}</div>
+      <span class="meta-from-name">{{SENDER_NAME}}</span>
+      <span class="meta-from-email">&lt;{{SENDER_EMAIL}}&gt;</span>
+      <span class="meta-date">Today · 9:42 AM</span>
+    </div>
+  </div>
+
+  <!-- Email body -->
+  <div class="email">
+
+    <div class="email-header">
+      <div class="wordmark">{{BRAND_UPPER}}</div>
+      <div class="header-eyebrow">{{HEADER_EYEBROW}}</div>
+      <div class="header-headline">{{HEADER_HEADLINE}}</div>
+    </div>
+
+    <div class="email-body">
+      <p class="email-greeting">{{GREETING}}</p>
+
+      <p class="email-p">{{BODY_P1}}</p>
+
+      <p class="email-p">{{BODY_P2}}</p>
+
+      <div class="email-callout">
+        <strong>{{CALLOUT_TITLE}}</strong><br/>
+        {{CALLOUT_BODY}}
+      </div>
+
+      <p class="email-p">{{BODY_P3}}</p>
+
+      <ul class="email-list">
+        <li>{{BULLET_1}}</li>
+        <li>{{BULLET_2}}</li>
+        <li>{{BULLET_3}}</li>
+      </ul>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#">{{CTA_PRIMARY}}</a>
+        <a class="btn btn-secondary" href="#">{{CTA_SECONDARY}}</a>
+      </div>
+
+      <div class="signoff">
+        {{SIGNOFF_LINE}}
+        <div class="signoff-name">— {{SIGNOFF_NAME}}</div>
+      </div>
+
+      <div class="ps">
+        <strong>P.S.</strong> {{PS_LINE}}
+      </div>
+    </div>
+
+    {{AFFIRMATION_BLOCK}}
+
+    <div class="footer-accent"></div>
+
+    <div class="email-footer">
+      <div class="footer-wordmark">{{FOOTER_WORDMARK}}</div>
+      <div>{{FOOTER_ADDRESS}}</div>
+      <div class="footer-meta">
+        You're receiving this because {{FOOTER_REASON}}. <a href="#">Manage email preferences</a> · <a href="#">Unsubscribe</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

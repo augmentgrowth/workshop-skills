@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{{BRAND}} — Brand Showcase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family={{DISPLAY_FONT_URL}}:ital,wght@0,400;0,700;0,900;1,900&family={{BODY_FONT_URL}}:wght@400;500;600&family={{LABEL_FONT_URL}}:wght@500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: {{PRIMARY_COLOR}};
+    --primary-dark: {{PRIMARY_DARK_COLOR}};
+    --secondary: {{SECONDARY_COLOR}};
+    --secondary-dark: {{SECONDARY_DARK_COLOR}};
+    --surface: #FFFFFF;
+    --surface-variant: #F5F8FB;
+    --on-surface: {{TEXT_COLOR}};
+    --on-surface-variant: {{TEXT_VARIANT_COLOR}};
+    --outline: #E0E0E0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--surface); }
+  body {
+    font-family: '{{BODY_FONT}}', system-ui, sans-serif;
+    color: var(--on-surface);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, {{PRIMARY_COLOR}} 0%, {{SECONDARY_COLOR}} 100%);
+    padding: 96px 80px 88px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-eyebrow {
+    font-family: '{{LABEL_FONT}}', sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 24px;
+  }
+  .hero-headline {
+    font-family: '{{DISPLAY_FONT}}', sans-serif;
+    font-weight: 900;
+    font-size: 6.5rem;
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .hero-subhead {
+    font-family: '{{BODY_FONT}}', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.55;
+    max-width: 720px;
+    margin-bottom: 40px;
+    color: rgba(255,255,255,0.95);
+  }
+  .hero-ctas { display: flex; gap: 16px; }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: '{{LABEL_FONT}}', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 32px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-secondary { background: var(--secondary); color: var(--on-surface); }
+  .btn-on-gradient-primary { background: #fff; color: var(--primary); }
+  .btn-on-gradient-secondary { background: rgba(0,0,0,0.85); color: #fff; }
+
+  /* SECTIONS */
+  .section { padding: 72px 80px; }
+  .section + .section { border-top: 1px solid var(--outline); }
+  .section-eyebrow {
+    font-family: '{{LABEL_FONT}}', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: '{{DISPLAY_FONT}}', sans-serif;
+    font-weight: 900;
+    font-size: 2.75rem;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    color: var(--on-surface);
+    margin-bottom: 12px;
+  }
+  .section-desc {
+    font-family: '{{BODY_FONT}}', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--on-surface-variant);
+    max-width: 720px;
+    margin-bottom: 44px;
+  }
+
+  /* COLOR SWATCHES */
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .swatch {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--outline);
+    background: #fff;
+  }
+  .swatch-color {
+    height: 120px;
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+  }
+  .swatch-tag {
+    font-family: '{{LABEL_FONT}}', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(0,0,0,0.45);
+    padding: 4px 10px;
+    border-radius: 9999px;
+  }
+  .swatch-tag.dark { color: var(--on-surface); background: rgba(255,255,255,0.85); }
+  .swatch-body { padding: 14px 16px 16px; }
+  .swatch-name {
+    font-family: '{{LABEL_FONT}}', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--on-surface);
+    margin-bottom: 2px;
+  }
+  .swatch-hex {
+    font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+    font-size: 0.8rem;
+    color: var(--on-surface-variant);
+  }
+
+  /* SUB-BRAND ROWS — optional, only render if {{SUB_BRANDS_BLOCK}} populated */
+  .sub-brand-row { margin-top: 28px; }
+  .sub-brand-label {
+    font-family: '{{LABEL_FONT}}', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+    margin-bottom: 12px;
+  }
+  .sub-brand-bars {
+    display: flex;
+    gap: 12px;
+    height: 64px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .sub-brand-bar {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    padding: 10px 12px;
+    color: rgba(0,0,0,0.7);
+    font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    border-radius: 6px;
+  }
+  .sub-brand-bar.on-light { color: #fff; }
+
+  /* TYPOGRAPHY SCALE */
+  .type-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    padding: 24px 0;
+    border-top: 1px solid var(--outline);
+    align-items: baseline;
+  }
+  .type-row:first-of-type { border-top: none; padding-top: 0; }
+  .type-meta { font-family: '{{LABEL_FONT}}', sans-serif; }
+  .type-meta-name {
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--on-surface);
+    margin-bottom: 4px;
+  }
+  .type-meta-spec {
+    font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+    font-size: 0.72rem;
+    color: var(--on-surface-variant);
+    line-height: 1.5;
+  }
+  .type-display-xl {
+    font-family: '{{DISPLAY_FONT}}', sans-serif;
+    font-weight: 900;
+    font-size: 3.875rem;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+  }
+  .type-display-lg {
+    font-family: '{{DISPLAY_FONT}}', sans-serif;
+    font-weight: 900;
+    font-size: 2.1875rem;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+  }
+  .type-display-md {
+    font-family: '{{DISPLAY_FONT}}', sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+  .type-sub-lg {
+    font-family: '{{LABEL_FONT}}', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.025em;
+  }
+  .type-body-lg {
+    font-family: '{{BODY_FONT}}', sans-serif;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+  .type-label-sm {
+    font-family: '{{LABEL_FONT}}', sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* BUTTON LIBRARY */
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    background: var(--surface-variant);
+    padding: 36px;
+    border-radius: 12px;
+  }
+  .button-cell {
+    background: #fff;
+    border-radius: 8px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .button-cell.dark { background: var(--on-surface-variant); }
+  .button-cell.dark .button-cell-label { color: rgba(255,255,255,0.85); }
+  .button-cell-label {
+    font-family: '{{LABEL_FONT}}', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--on-surface-variant);
+    color: rgba(255,255,255,0.85);
+    padding: 28px 80px;
+    font-family: '{{BODY_FONT}}', sans-serif;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-wordmark {
+    font-family: '{{LABEL_FONT}}', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">{{BRAND_UPPER}} · DESIGN SYSTEM · {{YEAR}}</div>
+    <div class="hero-headline">{{HERO_HEADLINE}}</div>
+    <div class="hero-subhead">{{HERO_SUBHEAD}}</div>
+    <div class="hero-ctas">
+      <a class="btn btn-on-gradient-primary">{{CTA_PRIMARY}}</a>
+      <a class="btn btn-on-gradient-secondary">{{CTA_SECONDARY}}</a>
+    </div>
+  </section>
+
+  <!-- COLORS -->
+  <section class="section">
+    <div class="section-eyebrow">01 · Color System</div>
+    <h2 class="section-title">Core Palette</h2>
+    <p class="section-desc">{{COLOR_NARRATIVE}}</p>
+
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:{{PRIMARY_COLOR}}"><span class="swatch-tag">PRIMARY</span></div>
+        <div class="swatch-body">
+          <div class="swatch-name">{{PRIMARY_NAME}}</div>
+          <div class="swatch-hex">{{PRIMARY_COLOR}}</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:{{SECONDARY_COLOR}}"><span class="swatch-tag dark">SECONDARY</span></div>
+        <div class="swatch-body">
+          <div class="swatch-name">{{SECONDARY_NAME}}</div>
+          <div class="swatch-hex">{{SECONDARY_COLOR}}</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:{{TEXT_COLOR}}"><span class="swatch-tag">ON-SURFACE</span></div>
+        <div class="swatch-body">
+          <div class="swatch-name">{{TEXT_NAME}}</div>
+          <div class="swatch-hex">{{TEXT_COLOR}}</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:{{TEXT_VARIANT_COLOR}}"><span class="swatch-tag">ON-SURFACE VAR</span></div>
+        <div class="swatch-body">
+          <div class="swatch-name">{{TEXT_VARIANT_NAME}}</div>
+          <div class="swatch-hex">{{TEXT_VARIANT_COLOR}}</div>
+        </div>
+      </div>
+    </div>
+
+    {{SUB_BRANDS_BLOCK}}
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section class="section">
+    <div class="section-eyebrow">02 · Typography</div>
+    <h2 class="section-title">{{TYPE_SYSTEM_TITLE}}</h2>
+    <p class="section-desc">{{TYPE_NARRATIVE}}</p>
+
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-meta-name">Headline Display</div>
+        <div class="type-meta-spec">{{DISPLAY_FONT}} · 900<br/>62px / -0.025em / 100%</div>
+      </div>
+      <div class="type-display-xl">{{TYPE_SAMPLE_XL}}</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-meta-name">Headline Large</div>
+        <div class="type-meta-spec">{{DISPLAY_FONT}} · 900<br/>35px / -0.025em / 110%</div>
+      </div>
+      <div class="type-display-lg">{{TYPE_SAMPLE_LG}}</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-meta-name">Headline Medium</div>
+        <div class="type-meta-spec">{{DISPLAY_FONT}} · 700<br/>28px / -0.025em / 120%</div>
+      </div>
+      <div class="type-display-md">{{TYPE_SAMPLE_MD}}</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-meta-name">Subheader Large</div>
+        <div class="type-meta-spec">{{LABEL_FONT}} · 700<br/>24px / -0.025em</div>
+      </div>
+      <div class="type-sub-lg">{{TYPE_SAMPLE_SUB}}</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-meta-name">Body Large</div>
+        <div class="type-meta-spec">{{BODY_FONT}} · 400<br/>18px / 160%</div>
+      </div>
+      <div class="type-body-lg">{{TYPE_SAMPLE_BODY}}</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-meta-name">Label Small</div>
+        <div class="type-meta-spec">{{LABEL_FONT}} · 600<br/>12px / +0.06em / UPPER</div>
+      </div>
+      <div class="type-label-sm">{{TYPE_SAMPLE_LABEL}}</div>
+    </div>
+  </section>
+
+  <!-- BUTTONS -->
+  <section class="section">
+    <div class="section-eyebrow">03 · Components</div>
+    <h2 class="section-title">Button Library</h2>
+    <p class="section-desc">{{BUTTON_NARRATIVE}}</p>
+
+    <div class="button-grid">
+      <div class="button-cell">
+        <div class="button-cell-label">Primary · On Surface</div>
+        <button class="btn btn-primary">{{BUTTON_PRIMARY_LIGHT}}</button>
+      </div>
+      <div class="button-cell">
+        <div class="button-cell-label">Secondary · On Surface</div>
+        <button class="btn btn-secondary">{{BUTTON_SECONDARY_LIGHT}}</button>
+      </div>
+      <div class="button-cell dark">
+        <div class="button-cell-label">Primary · On Dark</div>
+        <button class="btn btn-primary">{{BUTTON_PRIMARY_DARK}}</button>
+      </div>
+      <div class="button-cell dark">
+        <div class="button-cell-label">Secondary · On Dark</div>
+        <button class="btn btn-secondary">{{BUTTON_SECONDARY_DARK}}</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-wordmark">{{BRAND_UPPER}}</div>
+    <div>Design System · {{YEAR}} · Generated from <code>design.md</code></div>
+  </div>
+
+</div>
+</body>
+</html>

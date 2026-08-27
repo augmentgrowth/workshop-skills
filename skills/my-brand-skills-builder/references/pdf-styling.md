@@ -67,6 +67,18 @@ license), the @import won't resolve. Two paths:
 3. **Acceptable:** let the system fallback take over. Surface to the
    user that the render uses a system fallback for that face.
 
+## Page breaks and thin pages
+
+`build_pdf.py` forces a page break at every h1, and the shipped
+`brand_in_action.md.tmpl` opens with a short intro before its first h1 —
+which strands that intro on a near-empty page for every brand unless you
+act. Two sanctioned moves, both content-side (never edit the script):
+give the intro page genuine substance (a "what's inside" summary), or
+fold the intro into the first section. The same failure mode applies to
+the self-authored HTML masters (voice guide, design spec): plan section
+lengths so no forced break leaves a page mostly empty — the self-review
+loop treats a mostly empty page as a defect.
+
 ## Cover gradient logic
 
 The base CSS uses:
@@ -76,6 +88,12 @@ background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-seconda
 
 If `--brand-secondary` is missing, the gradient degenerates to a flat
 fill of primary. Usually fine; surface to operator if cover looks bland.
+
+**Flat-design brands** (design.md forbids gradients): append
+`--brand-cover-bg: var(--brand-primary);` (or any solid/treatment the
+brand allows) to the `_brand_vars.css` partial — `build_pdf.py`'s cover
+reads `--brand-cover-bg` before falling back to the gradient. This is
+the sanctioned override; never edit the script per brand.
 
 ## Validating output
 

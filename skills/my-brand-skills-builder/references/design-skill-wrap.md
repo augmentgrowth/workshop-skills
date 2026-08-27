@@ -60,9 +60,10 @@ design.md's Do's and Don'ts.]
 Mandatory for every visual output. After generating, render the
 artifact — PDF, image, or a browser screenshot — and look at the render
 yourself. Check for overlap, overflow, crowding, dead space, substituted
-or wrong fonts, low contrast, and page-count spill. Fix what you find,
-re-render, and look again. Do not declare the work done from the source
-code. Only from the render.
+or wrong fonts, low contrast, and page-count spill. A mostly empty page
+is a defect — rebalance or merge until every page earns its place. Fix
+what you find, re-render, and look again. Do not declare the work done
+from the source code. Only from the render.
 
 ## Do not
 

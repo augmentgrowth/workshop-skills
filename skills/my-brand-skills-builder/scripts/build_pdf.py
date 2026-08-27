@@ -70,7 +70,10 @@ body {
   page-break-after: always;
   break-after: page;
   height: 9.6in;
-  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary, var(--brand-primary)) 130%);
+  /* Flat-design brands: set --brand-cover-bg in the vars CSS (e.g. a solid
+     var(--brand-primary)) to replace the default gradient — the sanctioned
+     per-brand override; never edit this script for one brand. */
+  background: var(--brand-cover-bg, linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary, var(--brand-primary)) 130%));
   color: #fff;
   padding: 0.9in 0.7in 0.7in;
   display: flex;
@@ -200,8 +203,9 @@ blockquote.callout strong { font-family: var(--brand-font-display); }
 
 /* CODE BLOCKS — "prompts" */
 pre {
-  background: #0F172A;
-  color: #E2E8F0;
+  /* themed from the brand: dark ground = brand text color, type = brand surface */
+  background: var(--brand-text, #0F172A);
+  color: var(--brand-surface, #E2E8F0);
   border-radius: 6pt;
   padding: 14pt 16pt;
   margin: 10pt 0 14pt;

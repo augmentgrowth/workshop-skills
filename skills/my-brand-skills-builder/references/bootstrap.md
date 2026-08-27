@@ -19,6 +19,22 @@ Should the result match your official brand guidelines (intent), or the
 way your website looks today (reality)? [intent]
 ```
 
+When a live website is among the sources, check for a Firecrawl tool or
+skill before confirming. If absent, offer to set it up yourself, once,
+in plain language: "One optional upgrade: there's a free tool called
+Firecrawl that lets me read your site's exact colors, fonts, and page
+components much more reliably than built-in fetching. It needs no
+account and no API key — I can set it up for you right now if you say
+yes." On approval, YOU do the setup — the user never touches a
+terminal: run the keyless CLI via `npx -y firecrawl-cli@latest`, which
+works with no API key on the free tier (~1,000 pages/month, rate-limited
+per IP); read its `--help` for the scrape command and request the
+branding format. (The fuller `init` flow that installs Firecrawl's own
+agent skills exists, but browser authentication and account signup are
+NOT required for this build — don't send the user through them.) If
+they decline or the install fails, proceed with built-in fetching —
+it works, it just measures less.
+
 The user confirms. Slug derivation: lowercase company name, single-hyphenated.
 "Summit Mechanical" -> `summit-mechanical`. Confirm before creating folders.
 
@@ -130,8 +146,9 @@ a human can judge fit instantly.
 
 **Self-review loop (mandatory, both artifacts).** Render, look at the
 render yourself, check for overlap, overflow, crowding, dead space,
-substituted or wrong fonts, low contrast, page-count spill. Fix, re-render,
-look again. Only the render counts as done.
+substituted or wrong fonts, low contrast, page-count spill. A mostly
+empty page is a defect — rebalance or merge pages until every page earns
+its place. Fix, re-render, look again. Only the render counts as done.
 
 ## Step 5 — Generate demo artifacts
 

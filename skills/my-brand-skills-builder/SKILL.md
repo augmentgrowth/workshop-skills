@@ -1,6 +1,6 @@
 ---
 name: my-brand-skills-builder
-version: 1.0.1
+version: 1.0.4
 description: |
   Build (or update) your own company's brand voice + design skills from your
   real brand materials. Produces two installable skills — `<your-company>-voice`
@@ -90,6 +90,18 @@ skill, not here.
    `vibe` / `baseline`). Confirm with the user: "Sources I will use: [list].
    Should the result match your official brand guidelines (intent) or the
    way your website looks today (reality)?"
+   When a live website is one of the sources, check whether a Firecrawl
+   tool or skill is available. If it is not, offer to set it up yourself —
+   in plain, no-terminal language: "I can add a free tool called
+   Firecrawl that reads your website's exact colors, fonts, and page
+   components much more reliably than my built-in fetching. No account
+   or API key needed — it has a free tier — I just need your OK to
+   install it." On approval, YOU run the setup (the user types nothing):
+   use the keyless Firecrawl CLI via `npx -y firecrawl-cli@latest`
+   (works with no API key on the free tier, ~1,000 pages/month,
+   rate-limited per IP; check `--help` for the scrape command and use
+   the branding format). If they decline, or the install fails, continue
+   with built-in web fetching; never stall on it.
 2. **Voice guide resolution.** If the user provided a clean voice guide
    document, validate it. Otherwise generate one following
    `references/voice-guide-generation.md` against the catalogued sources.
@@ -122,7 +134,9 @@ skill, not here.
 9. **Self-review every visual output.** Mandatory: render each artifact
    (PDF or browser screenshot) and look at the render yourself. Check for
    overlap, overflow, crowding, dead space, substituted or wrong fonts,
-   low contrast, page-count spill. Fix what you find, re-render, look
+   low contrast, page-count spill. A page that is mostly empty is a
+   defect, not a neutral outcome — rebalance the content or merge pages
+   until every page earns its place. Fix what you find, re-render, look
    again. Do not declare the work done from the source code — only from
    the render.
 10. **Validation gate.** Run `scripts/validate_voice_skill.py` to score the

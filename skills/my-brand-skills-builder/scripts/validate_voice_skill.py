@@ -128,6 +128,7 @@ def parse_punctuation_budget(non_neg: str) -> dict:
     #   "<= N exclamation"           (operator form)
     excl_patterns = [
         r"(?:max(?:imum)?\s*|≤|<=)\s*(\d+)[^\n]{0,40}exclamation",
+        r"exclamation[^\n]{0,40}?(?:max(?:imum)?|≤|<=)\s*(\d+)",
         r"exclamation[^\n]*?(\d+)[^\n]*?\bmax\b",
         r"(\d+)\s*exclamation[^\n]*\bmax\b",
     ]

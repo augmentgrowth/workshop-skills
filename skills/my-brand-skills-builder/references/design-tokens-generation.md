@@ -48,12 +48,15 @@ except when the user chose the reality lean at bootstrap Step 0, where
 
 Use what the current environment provides, best tool first:
 
-- **Live URL**: if a Firecrawl skill/tool is installed, scrape with
-  `formats: ["branding"]` (auto-extracts colors, fonts, typography,
-  spacing, components), plus a markdown scrape of the homepage. Otherwise
-  fetch the page natively and measure what the HTML/CSS declares: hex
-  values in stylesheets, font-family stacks, spacing patterns, plus a
-  vision pass on a screenshot when available.
+- **Live URL**: if a Firecrawl skill/tool is installed — or the user
+  approved the keyless CLI setup at source inventory (`npx -y
+  firecrawl-cli@latest`, no API key needed on the free tier) — scrape
+  with the `branding` format (auto-extracts colors, fonts, typography,
+  spacing, components), plus a markdown scrape of the homepage. If the
+  user declined (the source-inventory step already offered once — don't
+  re-ask), fetch the page natively and measure what the HTML/CSS
+  declares: hex values in stylesheets, font-family stacks, spacing
+  patterns, plus a vision pass on a screenshot when available.
 - **PDF/PPT brand guide**: vision-enabled Read in 20-page chunks. Look
   for explicit hex codes, font names, spacing scales, component examples.
   Watch for inconsistency *within* the guide (logo-page palette vs

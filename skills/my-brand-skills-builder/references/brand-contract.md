@@ -92,7 +92,10 @@ ritualizes the affirmation; Restore's tagline is a tool, not a closer.
 If "No Oxford commas" appears in the non-negotiables, the validator checks
 every test output for "X, Y, and Z" patterns (multi-word aware).
 
-To opt out: omit the rule. Some brands tolerate Oxford commas.
+To opt out: omit the rule. Some brands tolerate Oxford commas. Note the
+directionality: only a *ban* is machine-checked. A brand that *requires*
+Oxford commas can state so, but that rule is informational — the
+second-pass review covers it, not the validator.
 
 #### Punctuation budget
 

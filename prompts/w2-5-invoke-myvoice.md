@@ -1,6 +1,6 @@
 # W2 · Step 5 — Invoke Your Voice Skill
 
-**Where:** the same session as [Step 4 — the build](w2-build-myvoice.md), after your my-voice skill is installed.
+**Where:** the same session as [Step 4 — the build](w2-4-build-myvoice.md), after your my-voice skill is installed.
 **What you'll have when done:** the same announcement written twice — once in your voice, once in generic AI voice — side by side.
 
 ## Steps

@@ -1,6 +1,6 @@
 # W2 · Step 6 — The Adversarial Review
 
-**Where:** the **same chat** as your announcement from [Step 5](w2-invoke-myvoice.md) — the reviewer needs it on the table.
+**Where:** the **same chat** as your announcement from [Step 5](w2-5-invoke-myvoice.md) — the reviewer needs it on the table.
 **What you'll have when done:** a grounded critique of your announcement, checked against your real emails — not an opinion, evidence.
 
 ## Steps

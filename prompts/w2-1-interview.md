@@ -9,7 +9,7 @@
 2. **Answer by voice dictation** — ramble freely; the prompt is built for it. Say "skip" to skip any question.
 3. Claude asks one question at a time. When it's done, it drafts two files — read and approve them.
 4. **Prove it:** start a new session and ask *"what do you know about me?"*
-5. Then continue to [Step 2 — Filing System](w2-filing-system.md) in the same session.
+5. Then continue to [Step 2 — Filing System](w2-2-filing-system.md) in the same session.
 
 ## The prompt — copy everything in the box
 

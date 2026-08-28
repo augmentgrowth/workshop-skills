@@ -11,7 +11,7 @@
 2. Paste the whole prompt box below into it, and **approve the plan** it writes — like a manager.
 3. While it runs, watch for two files: `email-context.md` (your samples) and `review-uncertain.md` (its judgment calls).
 4. Open `review-uncertain.md`, tick KEEP or DROP on each item, then tell Claude: **"apply my review answers."**
-5. Continue to [Step 4 — Build MyVoice](w2-build-myvoice.md) **in this same session**.
+5. Continue to [Step 4 — Build MyVoice](w2-4-build-myvoice.md) **in this same session**.
 
 ## The prompt — copy everything in the box
 

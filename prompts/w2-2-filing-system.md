@@ -1,6 +1,6 @@
 # W2 · Step 2 — Filing System Setup
 
-**Where:** the **same Claude Code session** as [Step 1 — the Interview](w2-interview.md), after it finishes.
+**Where:** the **same Claude Code session** as [Step 1 — the Interview](w2-1-interview.md), after it finishes.
 **What you'll have when done:** a PARA guide your vault files itself by, filing rules and working habits in CLAUDE.md, and a placeholder for your voice file.
 
 ## Steps

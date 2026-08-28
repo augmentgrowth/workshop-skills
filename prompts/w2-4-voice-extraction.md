@@ -1,4 +1,4 @@
-# W2 · Step 3 — MyVoice: Extract Your Writing Samples
+# W2 · Step 4 — MyVoice: Extract Your Writing Samples
 
 **Where:** Claude Code, in your **second-brain folder**.
 **What you'll have when done:** a cleaned corpus of your real emails (`email-context.md`) plus a short review queue of Claude's judgment calls — the raw material for your voice skill.
@@ -11,7 +11,7 @@
 2. Paste the whole prompt box below into it, and **approve the plan** it writes — like a manager.
 3. While it runs, watch for two files: `email-context.md` (your samples) and `review-uncertain.md` (its judgment calls).
 4. Open `review-uncertain.md`, tick KEEP or DROP on each item, then tell Claude: **"apply my review answers."**
-5. Continue to [Step 4 — Build MyVoice](w2-4-build-myvoice.md) **in this same session**.
+5. Continue to [Step 5 — Build MyVoice](w2-5-build-myvoice.md) **in this same session**.
 
 ## The prompt — copy everything in the box
 

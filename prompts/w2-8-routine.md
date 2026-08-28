@@ -1,4 +1,4 @@
-# W2 · Step 7 — Your Meeting Routine
+# W2 · Step 8 — Your Meeting Routine
 
 **Where:** the Claude Desktop app → **Code tab → Routines → New routine → Local.**
 **What you'll have when done:** a routine that pulls today's meeting transcripts into your second brain every evening, extracts your action items into a running list, and sends you a digest of what you owe.

@@ -1,9 +1,9 @@
-# W2 · Step 8 — Branded Document From One Sentence
+# W2 · Step 3 — Branded Document From One Sentence
 
 **Where:** Claude Code, in your **second-brain folder** (the cobalt-design and cobalt-voice skills must be installed there — they came with the workshop skill pack).
 **What you'll have when done:** a client-ready, fully Cobalt-branded one-page Word document — from a single sentence.
 
-You watched the host kick this off at the start of the session and reveal the result an hour later. This is the same prompt — run it yourself, on your own topic.
+This is the long-runner: you kick it off now, alongside the host, and let it work in the background — the finished document is the reveal at the end of the session. Run it again later on any topic of your own.
 
 > **No slash command needed.** This prompt calls two skills at once (cobalt-design for the brand system, cobalt-voice for the writing), so you invoke them by naming them — "Use the X and Y skills…" is the manual invocation. They also activate on their own whenever you ask for Cobalt-branded or client-ready work.
 

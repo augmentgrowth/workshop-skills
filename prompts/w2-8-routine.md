@@ -16,13 +16,13 @@
 ## The routine instructions — copy everything in the box
 
 ```text
-Two phases, in order.
+Two phases, in order. All files live in 02_Areas/Meetings/ in this vault — create that folder the first time if it doesn't exist.
 
 PHASE 1 — Pull today's transcripts.
-Check my Microsoft 365 connector for any Teams meeting transcripts from meetings that happened today (for meetings I organized, they land in my OneDrive "Recordings" folder). Save each new one as a markdown file in the Meetings folder of my second brain, named "<date> - <meeting title>.md". If the connector is unavailable or finds nothing new, skip this phase and continue — don't stop.
+Using my Microsoft 365 connector, fetch the transcripts of any Teams meetings that happened today. Prefer the connector's meeting/transcript tools if it has them; if not, search my OneDrive — transcripts for meetings I organized land in my "Recordings" folder. You will only see meetings I attended; that's expected. Save each new transcript as a markdown file in 02_Areas/Meetings/, named "<date> - <meeting title>.md". Skip anything already saved. If the connector is unavailable or finds nothing new, say so in one line, skip this phase, and continue — don't stop.
 
 PHASE 2 — Sweep the folder.
-Look through my Meetings folder for any meetings that happened today — including any new meeting notes or transcripts that were added today. For each meeting: pull out the action items — what was agreed, who owns each item, and by when. Append my items to a running file called Action Items.md in the Meetings folder, prefixed with today's date. Append, never overwrite. Then give me a short digest: each meeting in one line, and every open action item I owe, oldest first. Don't send anything yourself, and if you find no meetings from today, tell me that in one line and stop — don't make anything up. End with one line suggesting a next step, like: "Want the full deep recap on any of these? Run /call-summary on it."
+Look through 02_Areas/Meetings/ for any meetings that happened today — including any new meeting notes or transcripts that were added today. For each meeting: pull out the action items — what was agreed, who owns each item, and by when. Append my items to 02_Areas/Meetings/Action Items.md (create it if missing), prefixed with today's date. Append, never overwrite. Then give me a short digest: each meeting in one line, and every open action item I owe, oldest first. Don't send anything yourself, and if you find no meetings from today, tell me that in one line and stop — don't make anything up. End with one line suggesting a next step, like: "Want the full deep recap on any of these? Run /call-summary on it."
 ```
 
 ## Done when
@@ -32,7 +32,7 @@ Look through my Meetings folder for any meetings that happened today — includi
 
 ## If it goes sideways
 
-- **No transcripts found:** save the [sample meeting transcript](sample-meeting-transcript-summit-mechanical.md) into your Meetings folder and Run now again — same exercise, borrowed meeting.
+- **No transcripts found:** save the [sample meeting transcript](sample-meeting-transcript-summit-mechanical.md) into `02_Areas/Meetings/` and Run now again — same exercise, borrowed meeting.
 - **Nothing to sweep at all:** describe a different chore instead — any recurring job off any connector you have, in plain English. The pattern is the point: *a described job + a schedule = an agent.* (Simplest fallback: an 8-line morning brief from your calendar and inbox.)
 - **Granola users:** if your meeting notes live in Granola, Phase 1 can read Granola instead — say so in the instructions.
 

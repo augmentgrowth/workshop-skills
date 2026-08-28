@@ -1,9 +1,16 @@
-# Workshop 2 — Filing System Setup (step 5)
+# W2 · Step 2 — Filing System Setup
 
-Run this AFTER the interview finishes. Copy everything below the line and paste it into the same Claude Code session.
+**Where:** the **same Claude Code session** as [Step 1 — the Interview](w2-interview.md), after it finishes.
+**What you'll have when done:** a PARA guide your vault files itself by, filing rules and working habits in CLAUDE.md, and a placeholder for your voice file.
 
----
+## Steps
 
+1. Copy the whole prompt box below (it's long — the guide text is deliberately included) and paste it into the same session.
+2. Claude shows everything as drafts — read and approve.
+
+## The prompt — copy everything in the box
+
+```text
 Now set up my vault's filing system.
 
 1. Create a file named PARA_GUIDE.md at the top level of this vault with exactly the content pasted below — do not change the pasted wording.
@@ -111,3 +118,8 @@ CONTENT FOR THE "Working habits" BLOCK IN CLAUDE.md:
 - If I haven't said where a file should go, propose a destination (using the filing rules above) and confirm with me before writing it.
 - When work is too big to finish in one session, offer to create a project folder in `01_Projects` and save the plan there, so a future session can pick it up.
 - After meaningful work in a project folder, update that folder's `PROJECT_PROGRESS.md` with what changed, decisions made, and next steps — create the file if it doesn't exist yet.
+```
+
+## Done when
+
+`PARA_GUIDE.md` exists at your vault root, and CLAUDE.md carries the Filing rules and Working habits blocks. Stopping here is fine.

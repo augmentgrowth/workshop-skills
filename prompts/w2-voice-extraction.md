@@ -1,9 +1,21 @@
-# Workshop 2 — MyVoice: Extract Your Writing Samples (step 2)
+# W2 · Step 3 — MyVoice: Extract Your Writing Samples
 
-In your second-brain folder, run `/ce-plan`, then paste everything below the line into it. Approve the plan it writes.
+**Where:** Claude Code, in your **second-brain folder**.
+**What you'll have when done:** a cleaned corpus of your real emails (`email-context.md`) plus a short review queue of Claude's judgment calls — the raw material for your voice skill.
 
----
+**Data line, up front:** work account, work content, saved to your own machine. The prompt itself skips payments, legal, HR, and health.
 
+## Steps
+
+1. Confirm you're in your second-brain folder, then run `/ce-plan`.
+2. Paste the whole prompt box below into it, and **approve the plan** it writes — like a manager.
+3. While it runs, watch for two files: `email-context.md` (your samples) and `review-uncertain.md` (its judgment calls).
+4. Open `review-uncertain.md`, tick KEEP or DROP on each item, then tell Claude: **"apply my review answers."**
+5. Continue to [Step 4 — Build MyVoice](w2-build-myvoice.md) **in this same session**.
+
+## The prompt — copy everything in the box
+
+```text
 Using my email connector (Microsoft 365 — or Gmail if that's what I have connected), build a writing-voice corpus from my sent email.
 
 1. First, create a project folder for this build: `01_Projects/My Voice Skill/`. Everything below saves there. If you think it belongs somewhere else in my vault, propose the destination and confirm with me before writing anything.
@@ -18,3 +30,17 @@ Using my email connector (Microsoft 365 — or Gmail if that's what I have conne
    - email-context.md — the cleaned samples, numbered, each with a one-line label
    - review-uncertain.md — anything you weren't sure about (possibly AI-written or sensitive), each with a one-line reason and a KEEP / DROP checkbox for me
 10. Finish by reporting: kept vs skipped counts, why you skipped what you skipped, and whether this corpus is strong enough to build my voice skill from.
+```
+
+## Done when
+
+`email-context.md` exists in your `01_Projects/My Voice Skill/` folder and you've given verdicts on the review queue.
+
+## If it goes sideways
+
+- **Corpus comes back full of robot mail:** say *"drop anything auto-generated; keep only emails I actually wrote."*
+- **No working scan after ~8 minutes:** switch lanes — paste 5–10 emails you're proud of directly into the chat and say "use these as my corpus instead."
+
+## Level it up
+
+Slack as a second source — ask Claude to add your best Slack writing to the corpus the same way.

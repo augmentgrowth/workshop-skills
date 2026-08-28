@@ -1,9 +1,19 @@
-# Workshop 2 — The Interview (step 1)
+# W2 · Step 1 — The Interview
 
-Copy everything below the line and paste it into Claude Code (in your second-brain folder). Answer by voice.
+**Where:** Claude Code, opened in your **second-brain folder**.
+**What you'll have when done:** a profile file Claude reads every session, and a rewritten CLAUDE.md — so every future session starts already knowing you.
 
----
+## Steps
 
+1. Copy the whole prompt box below and paste it into Claude Code.
+2. **Answer by voice dictation** — ramble freely; the prompt is built for it. Say "skip" to skip any question.
+3. Claude asks one question at a time. When it's done, it drafts two files — read and approve them.
+4. **Prove it:** start a new session and ask *"what do you know about me?"*
+5. Then continue to [Step 2 — Filing System](w2-filing-system.md) in the same session.
+
+## The prompt — copy everything in the box
+
+```text
 Interview me, then write my working profile, so every future session starts already knowing me.
 
 I'll answer by voice dictation — expect rambling, run-on answers and transcription typos. Pull the facts out of what I say. If a name, acronym, or product name looks garbled or unusual, confirm the spelling before you write it down.
@@ -43,3 +53,12 @@ WRITING RULES — strict
 
 When both files are written, show them to me, then finish with exactly this line:
 "Prove it: start a new session and ask — what do you know about me?"
+```
+
+## Done when
+
+A **new** session can answer "what do you know about me?" from your files. Stopping here is fine.
+
+## Level it up
+
+Add a "things I never want" list to CLAUDE.md — phrases, formats, and behaviors Claude should never use with you.

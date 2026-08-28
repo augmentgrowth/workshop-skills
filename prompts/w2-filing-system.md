@@ -9,7 +9,8 @@ Now set up my vault's filing system.
 1. Create a file named PARA_GUIDE.md at the top level of this vault with exactly the content pasted below — do not change the pasted wording.
 2. Add the "Filing rules (PARA)" block pasted below to my CLAUDE.md, right after the "My vault" section.
 3. Create `02_Areas/Identity/My Voice.md` containing only: "Filled in later today."
-4. Show me everything as a draft before saving.
+4. Add the "Working habits" block pasted below to my CLAUDE.md, right after the Filing rules block.
+5. Show me everything as a draft before saving.
 
 CONTENT FOR PARA_GUIDE.md:
 
@@ -103,3 +104,10 @@ CONTENT FOR THE "Filing rules (PARA)" BLOCK IN CLAUDE.md:
 - When something fits more than one place, favor the project — unless it's recurring material with a standing home (meeting notes go to the meetings folder every time). When unsure, file fast and move on — search will find it; filing is low-stakes.
 - Never delete when tidying — move to `04_Archives` instead.
 - Before organizing, filing sweeps, cleaning up, or closing out a finished project: read `PARA_GUIDE.md` first and follow it.
+
+CONTENT FOR THE "Working habits" BLOCK IN CLAUDE.md:
+
+## Working habits
+- If I haven't said where a file should go, propose a destination (using the filing rules above) and confirm with me before writing it.
+- When work is too big to finish in one session, offer to create a project folder in `01_Projects` and save the plan there, so a future session can pick it up.
+- After meaningful work in a project folder, update that folder's `PROJECT_PROGRESS.md` with what changed, decisions made, and next steps — create the file if it doesn't exist yet.

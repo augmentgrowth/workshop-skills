@@ -1,6 +1,6 @@
 # Workshop 2 — MyVoice: Extract Your Writing Samples (step 2)
 
-Copy everything below the line and paste it into Claude Code (in your second-brain folder). Approve the plan it proposes.
+In your second-brain folder, run `/ce-plan`, then paste everything below the line into it. Approve the plan it writes.
 
 ---
 

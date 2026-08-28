@@ -43,7 +43,13 @@ After creating it, tell me where it lives and remind me to hit Run now once to a
 
 ## Level it up (later, not today)
 
-Ask Claude to **add a Phase 1** to the routine: before the sweep, search OneDrive (via your Microsoft 365 connector) for meeting transcripts added in the last 24 hours — one or two file searches only, never calendar enumeration — and save new ones into `02_Areas/Meetings/`. Granola users: same idea, reading Granola. Or go further: have the routine file your action items into your project management tool with a confirm-first step — the routine proposes, you approve.
+Ask Claude to **add a Phase 1** to the routine: before the sweep, fetch new meeting transcripts into `02_Areas/Meetings/` via your Microsoft 365 connector. Three constraints keep it fast — put them in the routine's instructions verbatim:
+
+- **My personal OneDrive only — never search SharePoint sites or my calendar.** (A tenant-wide "Recordings" search returns every project's folder; a calendar search can stall on permissions.)
+- **Put the date in the search query itself** (today's date or "last 24 hours") — a folder-name search has no date filter and returns everything ever recorded.
+- **Two file searches maximum, then move on** — finding nothing is a normal outcome, not an error.
+
+Then click **Run now** once more: the first connector call needs an approval that scheduled runs can't grant, so approve it interactively before trusting the schedule. Granola users: same idea, reading Granola. Or go further: have the routine file your action items into your project management tool with a confirm-first step — the routine proposes, you approve.
 
 ## Manual path (if you'd rather click it yourself)
 

@@ -3,7 +3,7 @@
 
 Reads brand_showcase.html and welcome_email.html from a 03_Demos directory
 and writes full-page PNG screenshots next to them (or to --out-dir if given).
-Lifted from the KidStrong vault snapshot and parameterized.
+Lifted from an earlier brand demo and parameterized.
 
 Usage:
   python build_screenshots.py \

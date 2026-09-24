@@ -3,19 +3,19 @@
 
 Pandoc -> HTML body -> wrap in brand-aware CSS (variables from
 derive_css_from_design.py output, plus the print-safe base layer
-lifted from KidStrong's demo pipeline) -> Playwright PDF.
+lifted from an earlier brand demo pipeline) -> Playwright PDF.
 
 Usage:
   python build_pdf.py \
-    --brand "Restore Hyper Wellness" \
+    --brand "Northwind Fitness" \
     --md /path/to/brand_in_action.md \
     --vars-css /path/to/_brand_vars.css \
     --png-dir /path/to/03_Demos \
-    --out /path/to/Restore_Brand_In_Action.pdf \
+    --out /path/to/Northwind_Brand_In_Action.pdf \
     --prepared-by "Augment Growth" \
-    --prepared-for "Restore Marketing" \
+    --prepared-for "Northwind Marketing" \
     --date 2026-05-20 \
-    --tagline "Body, mind, performance — restored."
+    --tagline "Stronger every week."
 
 Date defaults to today. Tagline is optional (cover lower-right text).
 """

@@ -37,16 +37,16 @@ Placeholders shared across templates:
 
 | Token | Source | Example |
 |---|---|---|
-| `{{BRAND}}` | brand name input | `Restore Hyper Wellness` |
-| `{{BRAND_UPPER}}` | brand name uppercased | `RESTORE HYPER WELLNESS` |
-| `{{BRAND_SLUG}}` | lowercased + hyphenated | `restore-hyper-wellness` |
-| `{{TAGLINE}}` | from voice guide signature phrases | `Body, mind, performance — restored.` |
+| `{{BRAND}}` | brand name input | `Northwind Fitness` |
+| `{{BRAND_UPPER}}` | brand name uppercased | `NORTHWIND FITNESS` |
+| `{{BRAND_SLUG}}` | lowercased + hyphenated | `northwind-fitness` |
+| `{{TAGLINE}}` | from voice guide signature phrases | `Stronger every week.` |
 | `{{PRIMARY_COLOR}}` | design.md `colors.primary` | `#0066CC` |
 | `{{SECONDARY_COLOR}}` | design.md `colors.secondary` (fallback to primary) | `#00A86B` |
 | `{{DISPLAY_FONT}}` | design.md `typography.display` | `Alumni Sans` |
 | `{{BODY_FONT}}` | design.md `typography.body` | `Inter` |
-| `{{AFFIRMATION}}` | voice guide non-negotiables, "Affirmation" line | `I am Strong. I am Brave. I can DO THIS.` |
-| `{{SIGNATURE_PHRASE}}` | one signature phrase that fits an email closer | `Helping kids WIN AT LIFE.` |
+| `{{AFFIRMATION}}` | voice guide non-negotiables, "Affirmation" line | `Show up. Get stronger. Repeat.` |
+| `{{SIGNATURE_PHRASE}}` | one signature phrase that fits an email closer | `Built for the long game.` |
 
 The brand_in_action template also uses:
 

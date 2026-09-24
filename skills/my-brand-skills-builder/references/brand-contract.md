@@ -45,7 +45,7 @@ matching. Case-insensitive.
 #### Preferred vocabulary (informational, not validated)
 
 ```markdown
-- **Use:** therapies, clients, studios, nutrients, Members
+- **Use:** sessions, coaches, studios, members
 ```
 
 Informational. The validator doesn't check that you used these. Surface them
@@ -53,11 +53,11 @@ in your scoring rubric or rely on second-pass review for that.
 
 #### Required phrases — TWO patterns
 
-**Pattern A: Required every piece** (KidStrong-style — the affirmation closes
+**Pattern A: Required every piece** (Northwind-style — the affirmation closes
 every output).
 
 ```markdown
-- **Affirmation, exact format:** "I am Strong. I am Brave. I can DO THIS."
+- **Affirmation, exact format:** "Show up. Get stronger. Repeat."
 ```
 
 The validator looks for the literal "Affirmation" word + the phrase "exact
@@ -65,11 +65,11 @@ format" + "every piece" (or "closer when natural" or "close with") in the
 non-negotiables section. If present, the affirmation must appear verbatim in
 every test output. If absent in any output -> FAIL.
 
-**Pattern B: Per-piece optional** (Restore-style — the tagline is available
+**Pattern B: Per-piece optional** (Harborline-style — the tagline is available
 but not mandatory).
 
 ```markdown
-- **Tagline, exact format:** "Fuel Your Body. Feel the Results."
+- **Tagline, exact format:** "Recover well. Live well."
 ```
 
 Use "Tagline" instead of "Affirmation", and do NOT include "every piece" or
@@ -80,8 +80,8 @@ a FAIL.
 **Distinction reminder:** The validator chooses Pattern A vs Pattern B by
 looking for the conjunction of (the word "Affirmation") AND (any of "every
 piece", "closer when natural", "close with"). If both are present, it's
-Pattern A. Otherwise it's Pattern B. This is intentional — KidStrong's voice
-ritualizes the affirmation; Restore's tagline is a tool, not a closer.
+Pattern A. Otherwise it's Pattern B. This is intentional — Northwind's voice
+ritualizes the affirmation; Harborline's tagline is a tool, not a closer.
 
 #### Oxford comma policy
 
@@ -107,7 +107,7 @@ The validator parses these patterns out of the section text:
 | `<= N em dashes per piece` or `N em dash max` or `≤N em dashes` | em-dash cap |
 | `No semicolons.` (literal line) | semicolon cap = 0 |
 
-Defaults if not declared (permissive — does not impose KidStrong's tight caps):
+Defaults if not declared (permissive — does not impose one brand's tight caps):
 
 | Rule | Default |
 |---|---|
@@ -129,13 +129,13 @@ The rule fires when the non-negotiables section contains all three of:
 - `<X words` or `under X words` or `<= X words` — picks up `short_max`
 - `Y+ words` or `>= Y words` — picks up `long_min`
 
-Example (KidStrong, explicit thresholds):
+Example (Northwind Fitness, explicit thresholds):
 ```markdown
 - **Pacing.** Mix short-punch sentences (under 8 words) with at least one longer expansion sentence (20+ words) per piece. Never flat, uniform lengths.
 ```
 
 If the rule is not declared, the validator does NOT enforce pacing. (Earlier
-v1.0.x of the orchestrator wrongly imposed KidStrong's 8/20 thresholds on
+v1.0.x of the orchestrator wrongly imposed one brand's 8/20 thresholds on
 all brands — that's the bug this contract fixes.)
 
 To declare pacing but with different thresholds:
@@ -231,7 +231,7 @@ This pattern works in any subagent-capable runtime (Claude Code, Cowork, Anthrop
 
 ## What this contract prevents
 
-- **Cross-client rule bleed.** A pacing rule from KidStrong shouldn't accidentally fail Restore validation. The validator can't enforce rules the brand didn't author.
+- **Cross-client rule bleed.** A pacing rule from one brand shouldn't accidentally fail another brand's validation. The validator can't enforce rules the brand didn't author.
 - **Orchestrator drift.** Future maintainers can't sneak a new "universal" rule into the orchestrator. New rules go into individual brand voice skills.
 - **Brittle defaults.** Permissive defaults (no enforcement when unspecified) mean adding new brand types doesn't require validator changes.
 
@@ -248,12 +248,12 @@ that's failing validation, the fix is **always** to update the wrapped
 skill's SKILL.md to declare the rule explicitly (or omit it intentionally).
 **Never** patch the validator script with a brand-specific default.
 
-Example self-anneal from the 2026-05-20 Restore run:
+Example self-anneal from a Harborline Wellness run:
 - Symptom: 5/6 prompts failed "missing affirmation"
 - Wrong fix: lower the validator's affirmation threshold
-- Right fix: detect Pattern A vs Pattern B in the parser; Restore's
+- Right fix: detect Pattern A vs Pattern B in the parser; Harborline's
   non-negotiable was Pattern B (tagline available, not mandatory)
-- The Restore voice skill SKILL.md kept its "Tagline, exact format:" line.
+- The Harborline voice skill SKILL.md kept its "Tagline, exact format:" line.
   No change there. The validator changed to honor the brand's intent.
 
 That's the principle in action.

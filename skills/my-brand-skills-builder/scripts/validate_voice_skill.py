@@ -70,7 +70,7 @@ def parse_required_phrases(non_neg: str) -> list[str]:
 
 
 def detect_pattern_a(non_neg: str) -> bool:
-    """Return True when the affirmation must close every piece (KidStrong-style).
+    """Return True when the affirmation must close every piece (Northwind-style).
 
     Pattern A (every piece): SKILL.md says "Affirmation, exact format: ..."
     AND mentions "every piece" or "closer when natural" or "close with".
@@ -100,7 +100,7 @@ def parse_punctuation_budget(non_neg: str) -> dict:
 
     # Em-dash cap — multiple shapes:
     #   "Max N em dashes" / "max 2 em dashes" / "<=1 em dash" / "≤2 em dashes"
-    #   "Em dashes — ... Maximum N per piece" (Restore style, max AFTER noun)
+    #   "Em dashes — ... Maximum N per piece" (Harborline style, max AFTER noun)
     #   "Em dashes — ... Maximum N-M per piece" or "N–M per piece" (range form)
     #   "1 em dash max" / "1 em dash, max"
     em_patterns = [
@@ -122,8 +122,8 @@ def parse_punctuation_budget(non_neg: str) -> dict:
             break
 
     # Exclamation cap — multiple shapes:
-    #   "Max N exclamation points"   (max-N-noun, KidStrong style)
-    #   "Exclamation points: N max"  (noun-N-max, Restore style)
+    #   "Max N exclamation points"   (max-N-noun, Northwind style)
+    #   "Exclamation points: N max"  (noun-N-max, Harborline style)
     #   "N exclamation points max"   (N-noun-max)
     #   "<= N exclamation"           (operator form)
     excl_patterns = [
@@ -153,7 +153,7 @@ def parse_pacing(non_neg: str) -> dict | None:
     long threshold in the same rule's text.
 
     If a brand doesn't declare pacing, the validator does NOT enforce it.
-    This is the fix for the bug where v1.0.x silently imposed KidStrong's
+    This is the fix for the bug where v1.0.x silently imposed one brand's
     8/20 thresholds on every brand.
     """
     m = re.search(r"\*?\*?Pacing\b[^\n]*\n?([^\n]*)", non_neg, re.IGNORECASE)

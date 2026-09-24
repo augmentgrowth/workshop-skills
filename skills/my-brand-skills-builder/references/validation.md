@@ -1,17 +1,17 @@
 # validation.md — assertion-based scoring + second-pass review
 
 Goal: catch voice drift before the skill ships. Pattern proven across
-several real brand packages (KidStrong and Restore appear below as worked
-examples).
+several real brand packages (the fictional Northwind Fitness and Harborline
+Wellness stand in for them below as worked examples).
 
 ## Why two passes
 
 Regex assertions catch the deterministic stuff (forbidden vocab,
 required phrases, punctuation budget). They miss:
 
-- Multi-word Oxford commas ("character, body, and brain" — KidStrong's
+- Multi-word Oxford commas ("core strength, better sleep, and real focus" — Northwind's
   original single-word regex missed this)
-- Vague hype without proof ("most kids forget the iPad exists" — passes
+- Vague hype without proof ("most members forget they're even working out" — passes
   forbidden-vocab but violates "every claim earns proof")
 - Off-tone register (formal voice on a TikTok hook)
 - Pacing flatness (all sentences within 4 words of each other)
@@ -36,16 +36,16 @@ Target: 4-8 prompts total. Example set:
 
 | ID | Channel | Topic |
 |---|---|---|
-| `01_instagram` | Instagram | New center opening, single hero shot |
-| `02_email` | Email | Reply to a parent's specific concern |
+| `01_instagram` | Instagram | New studio opening, single hero shot |
+| `02_email` | Email | Reply to a member's specific concern |
 | `03_facebook` | Facebook | Transformation story (real customer arc) |
 | `04_website` | Website | Hero copy + 3 supporting subheads |
 | `05_freeform_a` | (none) | Brand mission in 3 sentences |
 | `06_freeform_b` | (none) | Why we exist, no template |
 
-The "freeform" prompts replicate KidStrong's Test C (FB post probing
-Thinking Architecture) and Test D (website hero probing Rule-Breaking
-sentence rhythm). They surface drops in load-bearing patterns the
+The "freeform" prompts replicate Northwind's Test C (FB post probing
+its signature reasoning pattern) and Test D (website hero probing its
+rule-breaking sentence rhythm). They surface drops in load-bearing patterns the
 channel-specific prompts mask.
 
 ## Running the wrapped skill against each prompt
@@ -103,7 +103,7 @@ template:
 Review these voice outputs against the brand's non-negotiables. Flag
 specific violations the regex scoring missed. Be especially alert to:
 
-1. Multi-word Oxford commas — KidStrong's recurring regex blind spot
+1. Multi-word Oxford commas — Northwind's recurring regex blind spot
 2. Vague hype claims without proof points
 3. Off-tone register (formal where conversational is required, or vice versa)
 4. Pacing flatness — sentences uniform in length even if min/max exist
@@ -129,7 +129,7 @@ severity.
 
 Don't install or hand over the skill. Fix it, re-run.
 
-Common patterns and fixes (lifted from KidStrong's iteration log):
+Common patterns and fixes (lifted from Northwind's iteration log):
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
@@ -138,7 +138,7 @@ Common patterns and fixes (lifted from KidStrong's iteration log):
 | Vague claims pass forbidden-vocab but the reviewer flags | "Every claim earns proof" rule lives in references/editing.md, not always-loaded | Add to non-negotiables |
 | Required phrase missing on some prompts | Phrase is only enforced on certain channels in voice guide | Either tighten voice guide rule or accept channel-specific scoring |
 
-After fixing: re-run the validation suite. KidStrong
+After fixing: re-run the validation suite. Northwind
 went through three iterations (initial run -> Pacing fix -> Oxford+proof
 fix) before all assertions and second-pass review aligned at 100%.
 

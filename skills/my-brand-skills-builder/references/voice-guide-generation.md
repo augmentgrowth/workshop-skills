@@ -50,8 +50,8 @@ section. The formats are defined by `references/brand-contract.md`.
 - **Preferred vocab** — `**Use:** word1, word2, word3`.
 - **Signature phrases** — Pattern A (required every piece) or Pattern B
   (per-piece optional). Pattern A example: `Affirmation, exact format:
-  "I am Strong. I am Brave. I can DO THIS." Closes every piece.` Pattern B
-  example: `Tagline, exact format: "Fuel Your Body. Feel the Results."`
+  "Show up. Get stronger. Repeat." Closes every piece.` Pattern B
+  example: `Tagline, exact format: "Recover well. Live well."`
   Use the literal words "Affirmation" (Pattern A) or "Tagline" (Pattern B)
   so the parser detects intent.
 - **Punctuation budget** — concrete caps in literal phrasing the parser
